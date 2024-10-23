@@ -1,11 +1,7 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
-  <div>启动成功</div>
+  <div><router-view></router-view></div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
