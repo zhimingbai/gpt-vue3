@@ -1,8 +1,86 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, watch,onMounted } from 'vue'
 import { User, Lock } from '@element-plus/icons-vue'
+import router from '@/router/index.js'
 
+// 用于预校验
+const from = ref()
+// 表单数据
+const fromData = ref({
+  username: '',
+  password: '',
+  repassword: '',
+  code: '',
+})
+
+// 校验规则
+const rules = {
+  username: [
+    { required: true, message: '请输入用户名', trigger: 'blur' },
+    { min: 2, max: 10, message: '用户名长度为2-10位', trigger: 'blur' },
+  ],
+  password: [
+    { required: true, message: '请输入密码', trigger: 'blur' },
+    { min: 6, max: 16, message: '密码长度为6-16位', trigger: 'blur' },
+    { patten: /^\S{6,15}$/, message: '密码必须非空字符', trigger: 'blur' },
+  ],
+  repassword: [
+    { required: true, message: '请再次输入密码', trigger: 'blur' },
+    { min: 6, max: 16, message: '密码长度为6-16位', trigger: 'blur' },
+    { patten: /^\S{6,15}$/, message: '密码必须非空字符', trigger: 'blur' },
+    {
+      validator: (rule, value, callback) => {
+        if (value !== fromData.value.password) {
+          callback(new Error('两次密码输入不一致'))
+        } else {
+          callback() // 校验通过
+        }
+      },
+      trigger: 'blur',
+    },
+  ],
+  code: [
+    { required: true, message: '请输入验证码', trigger: 'blur' },
+    {
+      patten: /^[0-9]$/,
+      message: '验证码必须为数字',
+      trigger: 'blur',
+    },
+  ],
+}
+// 判断是否注册
 const isRegister = ref(false)
+
+// 切换时清空数据
+// 切换的时候，表单清空
+watch(isRegister, () => {
+  fromData.value = {
+    username: '',
+    password: '',
+    repassword: '',
+    code: '',
+  }
+})
+
+// 注册
+const register = async () => {
+  // 预校验
+  // TODO: 注册的axios
+  await from.value.validate()
+}
+
+// 登录
+const login = async () => {
+  // 预校验
+  // TODO: 登录的axios
+  await from.value.validate()
+  router.push('/main')
+}
+
+// 获取验证码图片
+onMounted( async ()=>{
+  // TODO: 获取验证码图片的axios
+})
 </script>
 <template>
   <el-row>
@@ -26,21 +104,45 @@ const isRegister = ref(false)
     </el-col>
     <el-col :span="6" :offset="3">
       <!--      注册-->
-      <el-form size="large" autocomplete="off" v-if="isRegister" class="form">
+      <el-form
+        :model="fromData"
+        :rules="rules"
+        ref="from"
+        size="large"
+        autocomplete="off"
+        v-if="isRegister"
+        class="form"
+      >
         <el-form-item>
           <h1>注册</h1>
         </el-form-item>
-        <el-form-item>
-          <el-input :prefix-icon="User" placeholder="请输入用户名"></el-input>
+        <el-form-item prop="username">
+          <el-input
+            v-model="fromData.username"
+            :prefix-icon="User"
+            placeholder="请输入用户名"
+          ></el-input>
+        </el-form-item>
+        <el-form-item prop="password">
+          <el-input
+            v-model="fromData.password"
+            :prefix-icon="Lock"
+            placeholder="请输入密码"
+          ></el-input>
+        </el-form-item>
+        <el-form-item prop="repassword">
+          <el-input
+            v-model="fromData.repassword"
+            :prefix-icon="Lock"
+            placeholder="请再次输入密码"
+          ></el-input>
         </el-form-item>
         <el-form-item>
-          <el-input :prefix-icon="Lock" placeholder="请输入密码"></el-input>
-        </el-form-item>
-        <el-form-item>
-          <el-input :prefix-icon="Lock" placeholder="请再次输入密码"></el-input>
-        </el-form-item>
-        <el-form-item>
-          <el-button type="primary" auto-insert-space class="large1"
+          <el-button
+            type="primary"
+            auto-insert-space
+            class="large1"
+            @click="register"
             >注册
           </el-button>
         </el-form-item>
@@ -51,23 +153,48 @@ const isRegister = ref(false)
         </el-form-item>
       </el-form>
       <!--      登录-->
-      <el-form size="large" autocomplete="off" v-else class="form">
+      <el-form
+        :model="fromData"
+        :rules="rules"
+        ref="from"
+        size="large"
+        autocomplete="off"
+        v-else
+        class="form"
+      >
         <el-form-item>
           <h1>登录</h1>
         </el-form-item>
-        <el-form-item>
-          <el-input :prefix-icon="User" placeholder="请输入用户名"></el-input>
+        <el-form-item prop="username">
+          <el-input
+            v-model="fromData.username"
+            :prefix-icon="User"
+            placeholder="请输入用户名"
+          ></el-input>
+        </el-form-item>
+        <el-form-item prop="password">
+          <el-input
+            v-model="fromData.repassword"
+            :prefix-icon="Lock"
+            placeholder="请输入密码"
+          ></el-input>
+        </el-form-item>
+        <el-form-item prop="code">
+          <section class="flex">
+            <el-input
+              v-model="fromData.code"
+              type="text"
+              placeholder="验证码"
+            ></el-input>
+            <img src="@/assets/code.png" alt="" />
+          </section>
         </el-form-item>
         <el-form-item>
-          <el-input :prefix-icon="Lock" placeholder="请输入密码"></el-input>
-        </el-form-item>
-        <section class="flex">
-          <el-checkbox>记住密码</el-checkbox>
-          <el-link type="primary" :underline="false">忘记密码？</el-link>
-        </section>
-        <el-form-item></el-form-item>
-        <el-form-item>
-          <el-button type="primary" auto-insert-space class="large1"
+          <el-button
+            type="primary"
+            auto-insert-space
+            class="large1"
+            @click="login"
             >登录
           </el-button>
         </el-form-item>
@@ -105,17 +232,18 @@ body {
   width: 100%;
 }
 
-.title{
+.title {
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
 }
 
-.ul-li{
+.ul-li {
   list-style: none;
   padding: 0;
   margin: 0 0 0 2rem;
 }
-ul li{
+
+ul li {
   font-size: 1rem;
   margin-bottom: 0.3rem;
 }
@@ -129,6 +257,11 @@ ul li{
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.flex img{
+  width: 7rem;
+  height: 100%;
 }
 
 .form .large1 {
