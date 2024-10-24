@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+a {
+  text-decoration: none; /* 去掉下划线 */
+  color: inherit; /* 继承父元素的文本颜色 */
+}
+body {
+  padding: 0;
+  background-image: url('@/assets/bg2.jpg');
+  overflow-x: hidden;
+  font-size: 1.6rem;
+}
+
+body::-webkit-scrollbar {
+  width: 1rem;
+  background-color: white;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 1rem 1rem 1rem 1rem;
+  background-color: #82b4ff;
+}

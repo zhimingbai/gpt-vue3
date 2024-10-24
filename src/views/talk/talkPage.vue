@@ -1,156 +1,16 @@
-<script setup></script>
+<script setup>
+import navSection from '@/components/navSection.vue';
+</script>
 <template>
   <div class="talk-page">
-    <nav class="shnav">
-      <div class="shnav1">
-        <div class="navl">
-          <a href="#">首页</a>
-        </div>
-        <div class="navl">
-          通用
-          <div class="subnav">
-            <a href="#">对话</a>
-          </div>
-          <div class="subnav">
-            <a href="#">图片</a>
-          </div>
-          <div class="subnav">
-            <a href="#">提取文字</a>
-          </div>
-        </div>
-        <div class="navl">
-          助教助手
-          <div class="subnav">
-            <a href="#">学习分析</a>
-          </div>
-          <div class="subnav">
-            <a href="#">教研备课</a>
-          </div>
-        </div>
-        <div class="navl">
-          技术工具
-          <div class="subnav">
-            <a href="#">代码转换</a>
-          </div>
-          <div class="subnav">
-            <a href="#">代码解释</a>
-          </div>
-          <div class="subnav">
-            <a href="#">SQL生成</a>
-          </div>
-        </div>
-        <div class="navl">
-          <a href="#">更多</a>
-        </div>
-      </div>
-      <div style="margin-right: 20px">
-        <div shiro:guest class="navl">
-          <!-- <a th:href="@{/login}">登录</a> -->
-          <RouterLink to="/login">登录</RouterLink>
-        </div>
-        <div shiro:user class="navl">
-          <div
-            style="
-              display: flex;
-              width: 100%;
-              justify-content: center;
-              align-items: center;
-            "
-          >
-            <img
-              src="#"
-              width="25px"
-              height="25px"
-              style="margin-right: 5px"
-            />
-            <div id="usenamePlaceholder"></div>
-          </div>
-          <div class="subnav" id="geren">
-            <a>个人中心</a>
-          </div>
-          <div class="subnav" id="xiugai">
-            <a onclick="resetPwd()">修改密码</a>
-          </div>
-          <div class="subnav">
-            <a href="#">退出登录</a>
-          </div>
-        </div>
-      </div>
-      <div id="Modal1" style="display: none">
-        <table
-          style="
-            width: 400px;
-            background-color: white;
-            border-radius: 30px;
-            text-align: center;
-            padding: 20px 50px;
-            line-height: 40px;
-          "
-        >
-          <tr align="center">
-            <td colspan="2">个人中心</td>
-          </tr>
-          <tr>
-            <td align="right">姓名：</td>
-            <td align="left"><input type="text" id="name" /></td>
-          </tr>
-          <tr>
-            <td align="right">性别：</td>
-            <td align="left"><input type="text" id="sex" /></td>
-          </tr>
-          <tr>
-            <td align="right">电话：</td>
-            <td align="left"><input type="text" id="dianhua" /></td>
-          </tr>
-          <tr>
-            <td align="right">
-              <button id="submit1" class="btn">确认</button>
-            </td>
-            <td><button id="close1" class="btn">取消</button></td>
-          </tr>
-        </table>
-      </div>
-      <div id="Modal2" style="display: none">
-        <table
-          style="
-            width: 400px;
-            background-color: white;
-            border-radius: 30px;
-            text-align: center;
-            padding: 20px 50px;
-            line-height: 40px;
-          "
-        >
-          <tr align="center">
-            <td colspan="2">个人中心</td>
-          </tr>
-          <tr>
-            <td align="right">旧密码：</td>
-            <td align="left"><input type="text" id="oldpwd" /></td>
-          </tr>
-          <tr>
-            <td align="right">新密码：</td>
-            <td align="left"><input type="text" id="newpwd" /></td>
-          </tr>
-          <tr>
-            <td align="right">重复密码：</td>
-            <td align="left"><input type="text" id="againpwd" /></td>
-          </tr>
-          <tr>
-            <td align="right">
-              <button id="submit2" class="btn">确认</button>
-            </td>
-            <td><button id="close2" class="btn">取消</button></td>
-          </tr>
-        </table>
-      </div>
-    </nav>
+    <navSection></navSection>
     <main class="el-main">
       <div
         style="
           display: flex;
           width: 100%;
-          box-shadow: rgba(1, 4, 9, 0.4) 0px 6px 12px -3px,
+          box-shadow:
+            rgba(1, 4, 9, 0.4) 0px 6px 12px -3px,
             rgba(1, 4, 9, 0.4) 0px 6px 18px 0px;
           border-radius: 20px;
         "
@@ -244,11 +104,7 @@
                   onkeypress="handleKeyPress(event)"
                 ></textarea>
                 <div id="submit-icon" onclick="submitText()">
-                  <img
-                    src="@/assets/fasong.png"
-                    width="30px"
-                    height="30px"
-                  />️
+                  <img src="@/assets/fasong.png" width="30px" height="30px" />️
                 </div>
                 <div id="loading-spinner"></div>
               </div>
@@ -260,73 +116,6 @@
   </div>
 </template>
 <style scoped>
-.talk-page {
-  font-size: 1.6rem;
-  padding: 0;
-  background-color: white;
-  overflow-x: hidden;
-  border-radius: 20px;
-  background-image: url('@/assets/bg2.jpg');
-  background-size: 100%;
-}
-a {
-  text-decoration: none; /* 去掉下划线 */
-  color: inherit; /* 继承父元素的文本颜色 */
-}
-a:hover {
-  color: mediumpurple;
-}
-.shnav {
-  display: flex;
-  width: 100%;
-  position: absolute;
-  z-index: 1;
-}
-.shnav1 {
-  width: 90%;
-  display: flex;
-  justify-content: center;
-}
-.navl {
-  width: 120px;
-  font-size: 25px;
-  font-weight: 0;
-  color: black;
-  text-align: center;
-  padding: 20px 10px;
-  font-family: Arial, Helvetica, sans-serif;
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
-  transition: all 0.5s;
-}
-.navl:hover {
-  border-radius: 25px;
-  margin: 10px 0 120px 0;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-.navl:hover .subnav {
-  max-height: 300px; /* 设置二级导航显示高度 */
-  opacity: 1; /* 显示二级导航 */
-  transform: translateY(0);
-}
-
-.subnav {
-  max-height: 0;
-  overflow: auto;
-  transition:
-    max-height 0.2s,
-    opacity 0.5s,
-    transform 0.5s;
-  position: initial;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background: rgba(255, 255, 255, 0);
-  padding: 0;
-  opacity: 0;
-  transform: translateY(-20px); /* 初始位置 */
-}
 ::-webkit-scrollbar {
   width: 10px;
   background-color: white;
