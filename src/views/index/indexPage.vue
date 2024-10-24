@@ -8,7 +8,7 @@
  */
 
 // TODO: showContent() 目前只返回index和调用的对象，因为原本的函数中牵扯到一些原生的页面逻辑操作
-function showContent(index,event) {
+function showContent(index, event) {
   console.log(index)
   event.preventDefault()
   console.log(event.target.tagName)
@@ -63,7 +63,7 @@ function showContent(index,event) {
         <div class="navl">
           <a href="#">登录</a>
         </div>
-        <div  class="navl">
+        <div class="navl">
           <div
             style="
               display: flex;
@@ -198,12 +198,9 @@ function showContent(index,event) {
           助力教育场景与大模型结合，创造智能化教学新范式
         </div>
         <div style="display: flex; width: 100%; margin-top: 3rem">
-          <a
-            href="http://localhost:5173/talk"
-            class="annv"
-            style="line-height: 5rem"
-            >点击体验</a
-          >
+          <router-link to="/talk" class="annv" style="line-height: 5rem">
+            点击体验
+          </router-link>
           <button class="annv text-slider" id="textSlider">
             <ul>
               <li><a href="#">文生图</a></li>
@@ -260,7 +257,7 @@ function showContent(index,event) {
             <button
               class="nav-button"
               style="border-radius: 2rem 0 0 0"
-              @click="showContent(1,$event)"
+              @click="showContent(1, $event)"
               id="button1"
             >
               <img
@@ -272,7 +269,11 @@ function showContent(index,event) {
               />
               智能对话
             </button>
-            <button class="nav-button" @click="showContent(2,$event)" id="button2">
+            <button
+              class="nav-button"
+              @click="showContent(2, $event)"
+              id="button2"
+            >
               <img
                 src="@/assets/tuwen.png"
                 width="45"
@@ -282,7 +283,11 @@ function showContent(index,event) {
               />
               知心图文
             </button>
-            <button class="nav-button" @click="showContent(3,$event)" id="button3">
+            <button
+              class="nav-button"
+              @click="showContent(3, $event)"
+              id="button3"
+            >
               <img
                 src="@/assets/tiqu.png"
                 width="40"
@@ -292,7 +297,11 @@ function showContent(index,event) {
               />
               提取文字
             </button>
-            <button class="nav-button" @click="showContent(4,$event)" id="button4">
+            <button
+              class="nav-button"
+              @click="showContent(4, $event)"
+              id="button4"
+            >
               <img
                 src="@/assets/gongzuo.png"
                 width="40"
@@ -305,7 +314,7 @@ function showContent(index,event) {
             <button
               class="nav-button"
               style="border-radius: 0 0 0 2rem"
-              @click="showContent(5,$event)"
+              @click="showContent(5, $event)"
               id="button5"
             >
               <img
@@ -631,7 +640,7 @@ a:hover {
 .btn {
   padding: 0 2rem;
   font-size: 1.4rem;
-  border-radius: 1.0rem;
+  border-radius: 1rem;
   font-weight: 400;
   background-color: #00c6fb;
 }
