@@ -3,18 +3,18 @@ import navSection from '@/components/navSection.vue'
 import { ref } from 'vue'
 
 const sectionLinkList = ref([
-  { imgSrc: 'src/assets/gzjh.png', name: '学习分析' },
-  { imgSrc: 'src/assets/zongjie.png', name: '教研备课' },
-  { imgSrc: 'src/assets/ribao.png', name: '日报&周报' },
-  { imgSrc: 'src/assets/hetong.png', name: '合同生成' },
-  { imgSrc: 'src/assets/huiyi.png', name: '会议纪要' },
-  { imgSrc: 'src/assets/dianzi.png', name: '电子邮件' },
-  { imgSrc: 'src/assets/zhaiyao.png', name: '摘要总结' },
-  { imgSrc: 'src/assets/dnzh.png', name: '代码转换' },
-  { imgSrc: 'src/assets/yufa.png', name: '语法校正' },
-  { imgSrc: 'src/assets/jieshi.png', name: '代码解释' },
-  { imgSrc: 'src/assets/sql.png', name: 'SQL生成' },
-  { imgSrc: 'src/assets/tqdz.png', name: '提取地址' },
+  { imgSrc: 'src/assets/gzjh.png', name: '学习分析', herf: '#' },
+  { imgSrc: 'src/assets/zongjie.png', name: '教研备课', herf: '#' },
+  { imgSrc: 'src/assets/ribao.png', name: '日报&周报', herf: '#' },
+  { imgSrc: 'src/assets/hetong.png', name: '合同生成', herf: '#' },
+  { imgSrc: 'src/assets/huiyi.png', name: '会议纪要', herf: '#' },
+  { imgSrc: 'src/assets/dianzi.png', name: '电子邮件', herf: '/email' },
+  { imgSrc: 'src/assets/zhaiyao.png', name: '摘要总结', herf: '#' },
+  { imgSrc: 'src/assets/dnzh.png', name: '代码转换', herf: '#' },
+  { imgSrc: 'src/assets/yufa.png', name: '语法校正', herf: '#' },
+  { imgSrc: 'src/assets/jieshi.png', name: '代码解释', herf: '#' },
+  { imgSrc: 'src/assets/sql.png', name: 'SQL生成', herf: '#' },
+  { imgSrc: 'src/assets/tqdz.png', name: '提取地址', herf: '#' },
 ])
 </script>
 <template>
@@ -36,18 +36,18 @@ const sectionLinkList = ref([
           </div>
         </div>
         <div class="container" id="buttonContainer">
-          <a
-            href="#"
+          <router-link
             v-for="(item, index) in sectionLinkList"
             :key="index"
             class="item"
+            :to="item.herf"
           >
             <div style="margin: 10px 0">
               <!-- TODO: 图片加载失败,不知道什么bug -->
               <img :src="item.imgSrc" width="40px" height="40px" />
             </div>
             <span>{{ item.name }}</span>
-          </a>
+          </router-link>
         </div>
         <div class="xian"></div>
       </div>
