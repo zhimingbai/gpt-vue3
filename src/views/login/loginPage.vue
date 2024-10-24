@@ -85,7 +85,7 @@ onMounted( async ()=>{
 <template>
   <el-row>
     <el-col class="login-page" :span="12">
-      <el-col :span="8" :offset="7" class="left">
+      <el-col :span="8" :offset="12" class="left">
         <section class="image">
           <img src="@/assets/zqzxlogo.png" alt="" />
         </section>
@@ -148,7 +148,7 @@ onMounted( async ()=>{
         </el-form-item>
         <el-form-item>
           <el-link type="info" :underline="false" @click="isRegister = false"
-            >← 返回
+            ><span class="textBlack">← 返回</span>
           </el-link>
         </el-form-item>
       </el-form>
@@ -200,7 +200,7 @@ onMounted( async ()=>{
         </el-form-item>
         <el-form-item>
           <el-link type="info" :underline="false" @click="isRegister = true"
-            >注册 →
+            > <span class="textBlack">注册 →</span>
           </el-link>
         </el-form-item>
       </el-form>
@@ -211,8 +211,12 @@ onMounted( async ()=>{
 /* 左边 */
 .login-page {
   height: 100vh;
-  background-image: url('@/assets/login-page-bg.jpg');
-  background-size: cover;
+  /* background-image: url('@/assets/login-page-bg.jpg');
+  background-size: cover; */
+}
+
+.textBlack {
+  color: #333;
 }
 
 .left {

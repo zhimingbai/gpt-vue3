@@ -1,18 +1,22 @@
-<script setup></script>
+<script setup>
+import { RouterLink } from 'vue-router'
+</script>
 <template>
   <!-- 这里可以复用，应为全局组件 -->
   <nav class="shnav">
     <div class="shnav1">
       <div class="navl">
-        <a href="#">首页</a>
+        <router-link to="/">首页</router-link>
       </div>
       <div class="navl">
         通用
         <div class="subnav">
-          <a href="#">对话</a>
+          <!-- <a href="#">对话</a> -->
+          <router-link to="/talk">对话</router-link>
         </div>
         <div class="subnav">
-          <a href="#">图片</a>
+          <!-- <a href="#">图片</a> -->
+          <router-link to="/image">图片</router-link>
         </div>
         <div class="subnav">
           <a href="#">提取文字</a>
@@ -40,12 +44,14 @@
         </div>
       </div>
       <div class="navl">
-        <a href="#">更多</a>
+        <!-- <a href="#">更多</a> -->
+        <router-link to="/more">更多</router-link>
       </div>
     </div>
     <div style="margin-right: 2rem">
       <div class="navl">
-        <a href="#">登录</a>
+        <!-- <a href="#">登录</a> -->
+        <router-link to="/login">登录</router-link>
       </div>
       <div class="navl">
         <div

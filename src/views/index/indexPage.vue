@@ -56,13 +56,13 @@ function showContent(index, event) {
           <router-link to="/talk" class="annv" style="line-height: 5rem">
             点击体验
           </router-link>
-          <button class="annv text-slider" id="textSlider">
+          <!-- <button class="annv text-slider" id="textSlider">
             <ul>
               <li><a href="#">文生图</a></li>
               <li><a href="#">提取文字</a></li>
               <li><a href="#">文生图</a></li>
             </ul>
-          </button>
+          </button> -->
         </div>
       </div>
       <div class="todown">
