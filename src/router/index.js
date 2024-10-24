@@ -10,7 +10,15 @@ const router = createRouter({
       path: '/image',
       component: () => import('@/views/TextToImage/imagePage.vue'),
     },
-    { path: '/more', component: () => import('@/views/more/morePage.vue') },
+    { path: '/word', component: () => import('@/views/word/wordPage.vue') },
+    {
+      path: '/more',
+      component: () => import('@/views/more/morePage.vue'),
+    },
+    {
+      path: '/email',
+      component: () => import('@/views/more/emailPage.vue'),
+    },
   ],
 })
 

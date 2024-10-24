@@ -1,5 +1,8 @@
 <script setup>
 import { RouterLink } from 'vue-router'
+import { ref } from 'vue'
+
+const isLogin = ref(true)
 </script>
 <template>
   <!-- 这里可以复用，应为全局组件 -->
@@ -19,7 +22,8 @@ import { RouterLink } from 'vue-router'
           <router-link to="/image">图片</router-link>
         </div>
         <div class="subnav">
-          <a href="#">提取文字</a>
+          <!-- <a href="#">提取文字</a> -->
+          <router-link to="/word">提取文字</router-link>
         </div>
       </div>
       <div class="navl">
@@ -49,11 +53,11 @@ import { RouterLink } from 'vue-router'
       </div>
     </div>
     <div style="margin-right: 2rem">
-      <div class="navl">
+      <div class="navl" v-if="!isLogin">
         <!-- <a href="#">登录</a> -->
         <router-link to="/login">登录</router-link>
       </div>
-      <div class="navl">
+      <div class="navl" v-else>
         <div
           style="
             display: flex;
@@ -64,9 +68,9 @@ import { RouterLink } from 'vue-router'
         >
           <img
             src="@/assets/geren.png"
-            width="2.5rem"
-            height="2.5rem"
-            style="margin-right: 0.5rem"
+            width="25rem"
+            height="25rem"
+            style="margin-right: 1.5rem"
           />
           <div id="usenamePlaceholder"></div>
         </div>
@@ -120,12 +124,12 @@ import { RouterLink } from 'vue-router'
     <div id="Modal2" style="display: none">
       <table
         style="
-          width: 40rem;
+          width: 400px;
           background-color: white;
-          border-radius: 3rem;
+          border-radius: 30px;
           text-align: center;
-          padding: 2rem 5rem;
-          line-height: 4rem;
+          padding: 20px 50px;
+          line-height: 40px;
         "
       >
         <tr align="center">
@@ -147,9 +151,7 @@ import { RouterLink } from 'vue-router'
           <td align="right">
             <button id="submit2" class="btn">确认</button>
           </td>
-          <td>
-            <button id="close2" class="btn">取消</button>
-          </td>
+          <td><button id="close2" class="btn">取消</button></td>
         </tr>
       </table>
     </div>
