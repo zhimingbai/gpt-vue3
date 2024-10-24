@@ -1,5 +1,5 @@
 <script setup>
-import navSection from '@/components/navSection.vue';
+import navSection from '@/components/navSection.vue'
 </script>
 <template>
   <div class="talk-page">

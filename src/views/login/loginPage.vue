@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch,onMounted } from 'vue'
+import { ref, watch, onMounted } from 'vue'
 import { User, Lock } from '@element-plus/icons-vue'
 import router from '@/router/index.js'
 
@@ -78,7 +78,7 @@ const login = async () => {
 }
 
 // 获取验证码图片
-onMounted( async ()=>{
+onMounted(async () => {
   // TODO: 获取验证码图片的axios
 })
 </script>
@@ -199,8 +199,8 @@ onMounted( async ()=>{
           </el-button>
         </el-form-item>
         <el-form-item>
-          <el-link type="info" :underline="false" @click="isRegister = true"
-            > <span class="textBlack">注册 →</span>
+          <el-link type="info" :underline="false" @click="isRegister = true">
+            <span class="textBlack">注册 →</span>
           </el-link>
         </el-form-item>
       </el-form>
@@ -259,7 +259,7 @@ ul li {
   align-items: center;
 }
 
-.flex img{
+.flex img {
   width: 11rem;
   height: 100%;
 }

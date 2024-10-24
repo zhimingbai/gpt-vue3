@@ -73,13 +73,25 @@ const styleImageList = ref([
           <div style="margin-top: 20px">
             <span style="font-size: 15px; color: black"><b>风格</b></span>
             <br />
-            <div style="display: flex; width: 100%; margin-top: 20px ;justify-content: space-around">
+            <div
+              style="
+                display: flex;
+                width: 100%;
+                margin-top: 20px;
+                justify-content: space-around;
+              "
+            >
               <div
                 class="fenge"
                 onClick="selectRadio('fengeRadio1')"
                 v-for="(item, index) in styleImageList"
                 :key="index"
-                style="display: flex; flex-wrap: wrap;; justify-content: center; align-items: center;"
+                style="
+                  display: flex;
+                  flex-wrap: wrap;
+                  justify-content: center;
+                  align-items: center;
+                "
               >
                 <img
                   :src="item.imgSrc"

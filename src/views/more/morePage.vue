@@ -43,7 +43,7 @@ const sectionLinkList = ref([
             class="item"
           >
             <div style="margin: 10px 0">
-                <!-- TODO: 图片加载失败,不知道什么bug -->
+              <!-- TODO: 图片加载失败,不知道什么bug -->
               <img :src="item.imgSrc" width="40px" height="40px" />
             </div>
             <span>{{ item.name }}</span>

@@ -63,7 +63,7 @@ import { RouterLink } from 'vue-router'
           "
         >
           <img
-            src="../img/geren.png"
+            src="@/assets/geren.png"
             width="2.5rem"
             height="2.5rem"
             style="margin-right: 0.5rem"

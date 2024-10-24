@@ -1,5 +1,5 @@
 <script setup>
-import navSection from '@/components/navSection.vue';
+import navSection from '@/components/navSection.vue'
 
 // TODO: 目前已知bug，因为原本页面是原生写的，因此关于js的逻辑在这里就没有写，后期的话再补上
 /**
@@ -303,8 +303,6 @@ function showContent(index, event) {
 </template>
 
 <style scoped>
-
-
 .annv {
   width: 20rem;
   height: 5rem;
@@ -598,6 +596,7 @@ function showContent(index, event) {
   font-weight: 600;
   text-align: center;
   background: linear-gradient(to right, yellow, pink);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: fadeInOut 2s ease-in-out infinite alternate;
