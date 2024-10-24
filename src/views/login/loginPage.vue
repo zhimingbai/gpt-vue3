@@ -208,10 +208,6 @@ onMounted( async ()=>{
   </el-row>
 </template>
 <style scoped>
-body {
-  font-size: 10px;
-}
-
 /* 左边 */
 .login-page {
   height: 100vh;
