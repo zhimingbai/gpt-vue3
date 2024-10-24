@@ -1,5 +1,5 @@
 <script setup></script>
 <template>
-  <div>首页</div>
+  <div>对话</div>
 </template>
 <style scoped></style>

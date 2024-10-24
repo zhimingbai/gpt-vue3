@@ -74,7 +74,7 @@ const login = async () => {
   // 预校验
   // TODO: 登录的axios
   await from.value.validate()
-  router.push('/main')
+  router.push('/talk')
 }
 
 // 获取验证码图片
@@ -85,7 +85,7 @@ onMounted( async ()=>{
 <template>
   <el-row>
     <el-col class="login-page" :span="12">
-      <el-col :span="7" :offset="7" class="left">
+      <el-col :span="8" :offset="7" class="left">
         <section class="image">
           <img src="@/assets/zqzxlogo.png" alt="" />
         </section>
@@ -224,8 +224,8 @@ body {
 }
 
 .image {
-  width: 7rem;
-  height: 7rem;
+  width: 10rem;
+  height: 10rem;
 }
 
 .image img {
@@ -233,7 +233,7 @@ body {
 }
 
 .title {
-  font-size: 1.3rem;
+  font-size: 2.3rem;
   margin-bottom: 0.5rem;
 }
 
@@ -244,8 +244,8 @@ body {
 }
 
 ul li {
-  font-size: 1rem;
-  margin-bottom: 0.3rem;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 /* 右边 表单 */
@@ -260,7 +260,7 @@ ul li {
 }
 
 .flex img{
-  width: 7rem;
+  width: 11rem;
   height: 100%;
 }
 
