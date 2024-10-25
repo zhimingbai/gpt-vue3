@@ -23,6 +23,9 @@ const router = createRouter({
     {
       path: '/code',
       component:()=>import('@/views/more/codePage.vue')
+    }, {
+      path: '/studyAnalysis',
+      component:()=>import('@/views/more/studyAnalysisPage.vue')
     }
   ],
 })
