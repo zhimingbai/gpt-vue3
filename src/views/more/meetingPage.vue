@@ -9,7 +9,8 @@ import navSection from '@/components/navSection.vue'
         style="
           display: flex;
           width: 100%;
-          box-shadow: rgba(1, 4, 9, 0.4) 0px 6px 12px -3px,
+          box-shadow:
+            rgba(1, 4, 9, 0.4) 0px 6px 12px -3px,
             rgba(1, 4, 9, 0.4) 0px 6px 18px 0px;
           border-radius: 20px;
         "
@@ -268,7 +269,7 @@ import navSection from '@/components/navSection.vue'
 }
 
 .char-response::after {
-  content: "";
+  content: '';
   border: 10px dashed rgba(130, 180, 255, 0.58);
   border-top: 10px solid white;
   border-bottom: 10px solid white;
@@ -294,5 +295,4 @@ import navSection from '@/components/navSection.vue'
   display: inline-block;
   /* 修改为内联块级元素 */
 }
-
 </style>
