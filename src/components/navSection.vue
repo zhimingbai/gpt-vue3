@@ -2,7 +2,7 @@
 import { RouterLink } from 'vue-router'
 import { ref } from 'vue'
 
-const isLogin = ref(true)
+const isLogin = ref(false)
 </script>
 <template>
   <!-- 这里可以复用，应为全局组件 -->
