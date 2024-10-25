@@ -15,10 +15,15 @@ const router = createRouter({
       path: '/more',
       component: () => import('@/views/more/morePage.vue'),
     },
+    // 更多里面的页面，原本是想写成子路由的，但最后发现不行
     {
       path: '/email',
       component: () => import('@/views/more/emailPage.vue'),
     },
+    {
+      path: '/code',
+      component:()=>import('@/views/more/codePage.vue')
+    }
   ],
 })
 
