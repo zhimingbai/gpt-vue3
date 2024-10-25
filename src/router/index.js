@@ -22,11 +22,20 @@ const router = createRouter({
     },
     {
       path: '/code',
-      component:()=>import('@/views/more/codePage.vue')
-    }, {
+      component: () => import('@/views/more/codePage.vue'),
+    },
+    {
       path: '/studyAnalysis',
-      component:()=>import('@/views/more/studyAnalysisPage.vue')
-    }
+      component: () => import('@/views/more/studyAnalysisPage.vue'),
+    },
+    {
+      path: '/contact',
+      component: () => import('@/views/more/contractPage.vue'),
+    },
+    {
+      path: '/meeting',
+      component: () => import('@/views/more/meetingPage.vue'),
+    },
   ],
 })
 
