@@ -3,17 +3,17 @@ import navSection from '@/components/navSection.vue'
 import { ref } from 'vue'
 
 const sectionLinkList = ref([
-  { imgSrc: 'src/assets/gzjh.png', name: '学习分析', herf: '#' },
+  { imgSrc: 'src/assets/gzjh.png', name: '学习分析', herf: '/studyAnalysis' },
   { imgSrc: 'src/assets/zongjie.png', name: '教研备课', herf: '#' },
-  { imgSrc: 'src/assets/ribao.png', name: '日报&周报', herf: '#' },
-  { imgSrc: 'src/assets/hetong.png', name: '合同生成', herf: '#' },
-  { imgSrc: 'src/assets/huiyi.png', name: '会议纪要', herf: '#' },
+  { imgSrc: 'src/assets/ribao.png', name: '日报&周报', herf: '/dailyReport' },
+  { imgSrc: 'src/assets/hetong.png', name: '合同生成', herf: '/contact' },
+  { imgSrc: 'src/assets/huiyi.png', name: '会议纪要', herf: '/meeting' },
   { imgSrc: 'src/assets/dianzi.png', name: '电子邮件', herf: '/email' },
   { imgSrc: 'src/assets/zhaiyao.png', name: '摘要总结', herf: '#' },
-  { imgSrc: 'src/assets/dnzh.png', name: '代码转换', herf: '#' },
+  { imgSrc: 'src/assets/dnzh.png', name: '代码转换', herf: '/code' },
   { imgSrc: 'src/assets/yufa.png', name: '语法校正', herf: '#' },
   { imgSrc: 'src/assets/jieshi.png', name: '代码解释', herf: '#' },
-  { imgSrc: 'src/assets/sql.png', name: 'SQL生成', herf: '#' },
+  { imgSrc: 'src/assets/sql.png', name: 'SQL生成', herf: '/sql' },
   { imgSrc: 'src/assets/tqdz.png', name: '提取地址', herf: '#' },
 ])
 </script>
