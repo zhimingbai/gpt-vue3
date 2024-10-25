@@ -38,8 +38,12 @@ const router = createRouter({
     },
     {
       path: '/dailyReport',
-      component:()=>import('@/views/more/dailyReportPage.vue')
-    }
+      component: () => import('@/views/more/dailyReportPage.vue'),
+    },
+    {
+      path: '/sql',
+      component: () => import('@/views/more/sqlPage.vue'),
+    },
   ],
 })
 

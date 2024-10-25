@@ -10,10 +10,6 @@ export const useUserStore = defineStore(
     function setUser(newUser) {
       user.value = newUser
     }
-    // 获取用户信息
-    function getUser() {
-      return user.value
-    }
     // 删除用户信息
     function removeUser() {
       user.value = {}
@@ -22,7 +18,6 @@ export const useUserStore = defineStore(
     return {
       user,
       setUser,
-      getUser,
       removeUser,
     }
   },
