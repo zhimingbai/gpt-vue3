@@ -44,6 +44,10 @@ const router = createRouter({
       path: '/sql',
       component: () => import('@/views/more/sqlPage.vue'),
     },
+    {
+      path: '/address',
+      component:()=>import('@/views/more/addressPage.vue')
+    }
   ],
 })
 
