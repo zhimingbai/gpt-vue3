@@ -44,7 +44,8 @@ const sectionLinkList = ref([
               id="searchInput"
               placeholder="请输入所需的工具名.."
             />
-            <button onclick="searchFunction()">
+            <!-- TODO: 搜索功能, 目前没有实现,不会 -->
+            <button >
               <img src="@/assets/ss.png" width="40px" height="40px" />
             </button>
           </div>

@@ -1,5 +1,15 @@
 <script setup>
 import navSection from '@/components/navSection.vue'
+
+// 历史记录
+const history = () => {
+  ElMessage.error('功能正在开发')
+}
+
+// 结果按钮
+const askQuestion = () => {
+  ElMessage.error('功能正在开发')
+}
 </script>
 <template>
   <div class="address-page">
@@ -10,8 +20,8 @@ import navSection from '@/components/navSection.vue'
           display: flex;
           width: 100%;
           box-shadow:
-            rgba(1, 4, 9, 0.4) 0px 6px 12px -3px,
-            rgba(1, 4, 9, 0.4) 0px 6px 18px 0px;
+            rgba(1, 4, 9, 0.4) 0 6px 12px -3px,
+            rgba(1, 4, 9, 0.4) 0 6px 18px 0;
           border-radius: 20px;
         "
       >
@@ -19,14 +29,14 @@ import navSection from '@/components/navSection.vue'
           <div class="main-top">
             <span style="color: #fff">+新对话</span>
           </div>
-          <div class="main-bottom">
+          <div class="main-bottom" @click="history()">
             <img
               src="@/assets/duihuak.png"
               width="25px"
               height="25px"
               style="margin: 10px"
             />
-            <span>2024-01-18</span>
+            <span >2024-01-18</span>
           </div>
         </div>
         <div class="main-mid">
@@ -47,7 +57,7 @@ import navSection from '@/components/navSection.vue'
         <div class="main-right">
           <div
             style="
-              width: 80%;
+              width: 100%;
               height: 85vh;
               text-align: left;
               padding: 20px;
@@ -73,7 +83,7 @@ import navSection from '@/components/navSection.vue'
               ></textarea>
             </div>
             <button
-              onclick="askQuestion()"
+              @click="askQuestion()"
               style="
                 margin-top: 20px;
                 width: 100%;
@@ -143,7 +153,7 @@ import navSection from '@/components/navSection.vue'
   align-items: center;
 }
 .main-right {
-  width: 33%;
+  width: 35%;
   height: 100%;
   border-radius: 0 15px 15px 0;
   text-align: left;

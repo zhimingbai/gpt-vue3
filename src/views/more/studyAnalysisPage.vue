@@ -1,5 +1,24 @@
 <script setup>
 import navSection from '@/components/navSection.vue'
+import { useTokenStore } from '@/stores/index.js'
+
+// token数量
+const tokenStore = useTokenStore()
+const tokenCount = tokenStore.token
+
+const history = () => {
+  ElMessage.error('功能正在开发')
+}
+
+// 生成按钮
+const askQuestion = () => {
+  ElMessage.error('功能正在开发')
+}
+
+// 换一个按钮
+const change = () => {
+  ElMessage.error('功能正在开发')
+}
 </script>
 <template>
   <div class="study-analysis-page">
@@ -19,7 +38,7 @@ import navSection from '@/components/navSection.vue'
           <div class="main-top">
             <span style="color: #fff">+新对话</span>
           </div>
-          <div class="main-bottom">
+          <div class="main-bottom" @click="history()">
             <img
               src="@/assets/duihuak.png"
               width="25px"
@@ -61,7 +80,7 @@ import navSection from '@/components/navSection.vue'
               >
             </div>
             <div class="tok">
-              <span>您的tokens数：</span>
+              <span>您的tokens数：{{tokenCount}} </span>
               <span id="token-display" STYLE="color: #00c6fb;"></span>
             </div>
           </div>
@@ -140,7 +159,7 @@ import navSection from '@/components/navSection.vue'
           </div>
           <button
             id="btn"
-            onclick="askQuestion()"
+            @click="askQuestion()"
             style="
               margin-top: 20px;
               width: 40%;
@@ -154,7 +173,7 @@ import navSection from '@/components/navSection.vue'
           </button>
           <button
             id="huan"
-            onclick="askQuestion()"
+            @click="change()"
             style="
               margin-left: 20px;
               margin-top: 20px;
