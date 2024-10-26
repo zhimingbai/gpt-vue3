@@ -20,6 +20,7 @@ const router = createRouter({
       path: '/email',
       component: () => import('@/views/more/emailPage.vue'),
     },
+    // 代码转换和代码解释是一样的
     {
       path: '/code',
       component: () => import('@/views/more/codePage.vue'),
@@ -58,7 +59,7 @@ const router = createRouter({
     },
     {
       path: '/report',
-      component:()=>import('@/views/more/reportPage.vue')
+      component: () => import('@/views/more/reportPage.vue'),
     },
   ],
 })

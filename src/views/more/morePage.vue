@@ -12,7 +12,7 @@ const sectionLinkList = ref([
   { imgSrc: 'src/assets/zhaiyao.png', name: '摘要总结', herf: '/summary' },
   { imgSrc: 'src/assets/dnzh.png', name: '代码转换', herf: '/code' },
   { imgSrc: 'src/assets/yufa.png', name: '语法校正', herf: '/grammer' },
-  { imgSrc: 'src/assets/jieshi.png', name: '代码解释', herf: '#' },
+  { imgSrc: 'src/assets/jieshi.png', name: '代码解释', herf: '/code' },
   { imgSrc: 'src/assets/sql.png', name: 'SQL生成', herf: '/sql' },
   { imgSrc: 'src/assets/tqdz.png', name: '提取地址', herf: '/address' },
 ])

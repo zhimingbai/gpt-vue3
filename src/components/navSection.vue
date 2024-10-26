@@ -43,7 +43,8 @@ const isLogin = ref(false)
            <router-link to="/code">代码转换</router-link>
         </div>
         <div class="subnav">
-          <a href="#">代码解释</a>
+          <!-- <a href="#">代码解释</a> -->
+           <router-link to="/code">代码解释</router-link>
         </div>
         <div class="subnav">
           <!-- <a href="#">SQL生成</a> -->
