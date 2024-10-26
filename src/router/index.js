@@ -46,8 +46,12 @@ const router = createRouter({
     },
     {
       path: '/address',
-      component:()=>import('@/views/more/addressPage.vue')
-    }
+      component: () => import('@/views/more/addressPage.vue'),
+    },
+    {
+      path: '/grammer',
+      component: () => import('@/views/more/grammarPage.vue'),
+    },
   ],
 })
 
