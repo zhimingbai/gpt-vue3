@@ -1,5 +1,7 @@
 <script setup>
 import navSection from '@/components/navSection.vue'
+import { ref } from 'vue'
+// import router from '@/router';
 
 // TODO: 目前已知bug，因为原本页面是原生写的，因此关于js的逻辑在这里就没有写，后期的话再补上
 /**
@@ -10,10 +12,12 @@ import navSection from '@/components/navSection.vue'
  */
 
 // TODO: showContent() 目前只返回index和调用的对象，因为原本的函数中牵扯到一些原生的页面逻辑操作
-function showContent(index, event) {
+
+const currentId = ref(1)
+function showContent(index) {
   console.log(index)
-  event.preventDefault()
-  console.log(event.target.tagName)
+  // router.push('/mp4')
+  currentId.value = index
 }
 </script>
 <template>
@@ -112,7 +116,7 @@ function showContent(index, event) {
             <button
               class="nav-button"
               style="border-radius: 2rem 0 0 0"
-              @click="showContent(1, $event)"
+              @click="showContent(1)"
               id="button1"
             >
               <img
@@ -126,7 +130,7 @@ function showContent(index, event) {
             </button>
             <button
               class="nav-button"
-              @click="showContent(2, $event)"
+              @click="showContent(2)"
               id="button2"
             >
               <img
@@ -140,7 +144,7 @@ function showContent(index, event) {
             </button>
             <button
               class="nav-button"
-              @click="showContent(3, $event)"
+              @click="showContent(3)"
               id="button3"
             >
               <img
@@ -154,7 +158,7 @@ function showContent(index, event) {
             </button>
             <button
               class="nav-button"
-              @click="showContent(4, $event)"
+              @click="showContent(4)"
               id="button4"
             >
               <img
@@ -169,7 +173,7 @@ function showContent(index, event) {
             <button
               class="nav-button"
               style="border-radius: 0 0 0 2rem"
-              @click="showContent(5, $event)"
+              @click="showContent(5)"
               id="button5"
             >
               <img
@@ -184,7 +188,7 @@ function showContent(index, event) {
           </div>
           <!--          TODO: 这里之后大概率可以用v-for重写-->
           <div class="gnnr">
-            <div class="content" id="content1">
+            <div class="content" v-if="currentId == 1">
               <div id="text1">
                 <h1>智能对话</h1>
                 <p>
@@ -201,7 +205,7 @@ function showContent(index, event) {
                 <source src="@/assets/对话.mp4" type="video/mp4" />
               </video>
             </div>
-            <div class="content" id="content2">
+            <div class="content" v-if="currentId == 2">
               <div id="text2">
                 <h1>知心文生图</h1>
                 <p>
@@ -218,7 +222,7 @@ function showContent(index, event) {
                 <source src="@/assets/图片.mp4" type="video/mp4" />
               </video>
             </div>
-            <div class="content" id="content3">
+            <div class="content" v-if="currentId == 3">
               <div id="text3">
                 <h1>提取文字</h1>
                 <p>
@@ -235,7 +239,7 @@ function showContent(index, event) {
                 <source src="@/assets/tiqu文字.mp4" type="video/mp4" />
               </video>
             </div>
-            <div class="content" id="content4">
+            <div class="content" v-if="currentId == 4">
               <div id="text4">
                 <h1>学习分析</h1>
                 <p>
@@ -252,7 +256,7 @@ function showContent(index, event) {
                 <source src="@/assets/学习分析.mp4" type="video/mp4" />
               </video>
             </div>
-            <div class="content" id="content5">
+            <div class="content" v-if="currentId == 5">
               <div id="text5">
                 <h1>特色模型</h1>
                 <p>
@@ -651,7 +655,7 @@ function showContent(index, event) {
 }
 
 .content {
-  display: none;
+  /* display: none; */
   width: 100%;
 }
 
