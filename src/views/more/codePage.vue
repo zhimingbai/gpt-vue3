@@ -2,6 +2,7 @@
 import navSection from '@/components/navSection.vue'
 import { ref } from 'vue'
 import { useTokenStore } from '@/stores/index.js'
+// import { ElMessage } from 'element-plus'
 
 // token数量
 const tokenStore=useTokenStore()
