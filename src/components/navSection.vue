@@ -29,7 +29,8 @@ const isLogin = ref(false)
       <div class="navl">
         助教助手
         <div class="subnav">
-          <a href="#">学习分析</a>
+          <!-- <a href="#">学习分析</a> -->
+          <router-link to="/studyAnalysis">学习分析</router-link>
         </div>
         <div class="subnav">
           <a href="#">教研备课</a>
@@ -38,13 +39,15 @@ const isLogin = ref(false)
       <div class="navl">
         技术工具
         <div class="subnav">
-          <a href="#">代码转换</a>
+          <!-- <a href="#">代码转换</a> -->
+           <router-link to="/code">代码转换</router-link>
         </div>
         <div class="subnav">
           <a href="#">代码解释</a>
         </div>
         <div class="subnav">
-          <a href="#">SQL生成</a>
+          <!-- <a href="#">SQL生成</a> -->
+           <router-link to="/sql">SQL生成</router-link>
         </div>
       </div>
       <div class="navl">
