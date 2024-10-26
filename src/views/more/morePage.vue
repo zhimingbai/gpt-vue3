@@ -1,20 +1,34 @@
 <script setup>
 import navSection from '@/components/navSection.vue'
 import { ref } from 'vue'
+// 图片路径,不知道为什么要这样，反正这就就是不报错
+import img1 from '@/assets/gzjh.png'
+import img2 from '@/assets/zongjie.png'
+import img3 from '@/assets/ribao.png'
+import img4 from '@/assets/hetong.png'
+import img5 from '@/assets/huiyi.png'
+import img6 from '@/assets/dianzi.png'
+import img7 from '@/assets/zhaiyao.png'
+import img8 from '@/assets/dnzh.png'
+import img9 from '@/assets/yufa.png'
+import img10 from '@/assets/jieshi.png'
+import img11 from '@/assets/sql.png'
+import img12 from '@/assets/tqdz.png'
+
 
 const sectionLinkList = ref([
-  { imgSrc: 'src/assets/gzjh.png', name: '学习分析', herf: '/studyAnalysis' },
-  { imgSrc: 'src/assets/zongjie.png', name: '教研备课', herf: '#' },
-  { imgSrc: 'src/assets/ribao.png', name: '日报&周报', herf: '/dailyReport' },
-  { imgSrc: 'src/assets/hetong.png', name: '合同生成', herf: '/contact' },
-  { imgSrc: 'src/assets/huiyi.png', name: '会议纪要', herf: '/meeting' },
-  { imgSrc: 'src/assets/dianzi.png', name: '电子邮件', herf: '/email' },
-  { imgSrc: 'src/assets/zhaiyao.png', name: '摘要总结', herf: '/summary' },
-  { imgSrc: 'src/assets/dnzh.png', name: '代码转换', herf: '/code' },
-  { imgSrc: 'src/assets/yufa.png', name: '语法校正', herf: '/grammer' },
-  { imgSrc: 'src/assets/jieshi.png', name: '代码解释', herf: '/code' },
-  { imgSrc: 'src/assets/sql.png', name: 'SQL生成', herf: '/sql' },
-  { imgSrc: 'src/assets/tqdz.png', name: '提取地址', herf: '/address' },
+  { imgSrc: img1, name: '学习分析', herf: '/studyAnalysis' },
+  { imgSrc: img2, name: '教研备课', herf: '#' },
+  { imgSrc: img3, name: '日报&周报', herf: '/dailyReport' },
+  { imgSrc: img4, name: '合同生成', herf: '/contact' },
+  { imgSrc: img5, name: '会议纪要', herf: '/meeting' },
+  { imgSrc: img6, name: '电子邮件', herf: '/email' },
+  { imgSrc: img7, name: '摘要总结', herf: '/summary' },
+  { imgSrc: img8, name: '代码转换', herf: '/code' },
+  { imgSrc: img9, name: '语法校正', herf: '/grammer' },
+  { imgSrc: img10, name: '代码解释', herf: '/code' },
+  { imgSrc: img11, name: 'SQL生成', herf: '/sql' },
+  { imgSrc: img12, name: '提取地址', herf: '/address' },
 ])
 </script>
 <template>
@@ -43,7 +57,6 @@ const sectionLinkList = ref([
             :to="item.herf"
           >
             <div style="margin: 10px 0">
-              <!-- TODO: 图片加载失败,不知道什么bug -->
               <img :src="item.imgSrc" width="40px" height="40px" />
             </div>
             <span>{{ item.name }}</span>

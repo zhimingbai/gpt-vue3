@@ -1,11 +1,14 @@
 <script setup>
 import navSection from '@/components/navSection.vue'
 import { ref } from 'vue'
+import img1 from '@/assets/ziran.png'
+import img2 from '@/assets/xieshi.png'
+import img3 from '@/assets/gudian.png'
 
 const styleImageList = ref([
-  { imgSrc: 'src/assets/ziran.png', name: '自然' },
-  { imgSrc: 'src/assets/xieshi.png', name: '写实' },
-  { imgSrc: 'src/assets/gudian.png', name: '古典' },
+  { imgSrc: img1, name: '自然' },
+  { imgSrc: img2, name: '写实' },
+  { imgSrc: img3, name: '古典' },
 ])
 </script>
 <template>
