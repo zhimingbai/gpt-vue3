@@ -1,5 +1,18 @@
 <script setup>
 import navSection from '@/components/navSection.vue'
+import { ElMessage } from 'element-plus';
+
+// TODO: 功能正在开发，该页面暂不可用
+
+
+// 历史记录
+const history = () => {
+  ElMessage.error('该功能正在开发中，请等待更新');
+}
+// 点击提交
+const submit = () => { 
+  ElMessage.error('该功能正在开发中，请等待更新');
+}
 </script>
 <template>
   <div class="word-page">
@@ -26,7 +39,7 @@ import navSection from '@/components/navSection.vue'
               height="25px"
               style="margin: 10px"
             />
-            <span>2024-01-18</span>
+            <span @click="history()">2024-01-18</span>
           </div>
         </div>
         <div class="main-mid">
@@ -55,13 +68,12 @@ import navSection from '@/components/navSection.vue'
             <input
               name="file"
               type="file"
-              value="提交图片"
               id="fileInput"
               class="wenj"
               accept="image/*"
             />
           </div>
-          <button class="tiq">提取</button>
+          <button class="tiq" @click="submit()">提取</button>
         </div>
       </div>
     </main>

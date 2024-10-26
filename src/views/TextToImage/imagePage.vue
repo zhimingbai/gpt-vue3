@@ -4,9 +4,8 @@ import { ref } from 'vue'
 import img1 from '@/assets/ziran.png'
 import img2 from '@/assets/xieshi.png'
 import img3 from '@/assets/gudian.png'
-// import { ElMessage } from 'element-plus'
+import { ElMessage } from 'element-plus'
 import { useTokenStore } from '@/stores/index'
-// import { ElMessage } from 'element-plus'
 
 const styleImageList = ref([
   { imgSrc: img1, name: '自然' },
