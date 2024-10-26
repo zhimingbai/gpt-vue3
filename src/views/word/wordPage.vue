@@ -1,6 +1,6 @@
 <script setup>
 import navSection from '@/components/navSection.vue'
-import { ElMessage } from 'element-plus';
+// import { ElMessage } from 'element-plus';
 
 // TODO: 功能正在开发，该页面暂不可用
 
