@@ -12,7 +12,7 @@ export const useTokenStore = defineStore(
     }
     // 删除token
     const removeToken = () => {
-      token.value = ''
+      token.value = 0
     }
     return {
       token,

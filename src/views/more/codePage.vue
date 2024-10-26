@@ -1,9 +1,20 @@
 <script setup>
 import navSection from '@/components/navSection.vue'
 import { ref } from 'vue'
+import { useTokenStore } from '@/stores/index.js'
 
 // token数量
-const token = ref(0)
+const tokenStore=useTokenStore()
+const tokenCount=ref(tokenStore.token)
+
+// 转换按钮
+const askQuestion = () => {
+  ElMessage.error('功能正在开发')
+}
+// 历史记录
+const history = () => {
+  ElMessage.error('功能正在开发')
+}
 </script>
 <template>
   <div class="code-page">
@@ -23,7 +34,7 @@ const token = ref(0)
           <div class="main-top">
             <span style="color: #fff">+新对话</span>
           </div>
-          <div class="main-bottom">
+          <div class="main-bottom" @click="history()">
             <img
               src="@/assets/duihuak.png"
               width="25px"
@@ -78,7 +89,7 @@ const token = ref(0)
               <option>Python</option>
             </select>
             <button
-              onclick="askQuestion()"
+              @click="askQuestion()"
               style="
                 background: #82b4ff;
                 width: 80px;
@@ -92,7 +103,7 @@ const token = ref(0)
               立即转换
             </button>
             <div class="tok">
-              <span>您的tokens数：{{ token }}</span>
+              <span>您的tokens数：{{ tokenCount }}</span>
               <span id="token-display" STYLE="color: #00c6fb;"></span>
             </div>
           </div>
@@ -155,7 +166,7 @@ const token = ref(0)
 
 .el-row {
   width: 18%;
-  height: 80vh;
+  height: 100%;
   background-image: linear-gradient(
     to top,
     #f3e7e9 0%,
