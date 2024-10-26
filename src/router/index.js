@@ -52,6 +52,10 @@ const router = createRouter({
       path: '/grammer',
       component: () => import('@/views/more/grammarPage.vue'),
     },
+    {
+      path: '/summary',
+      component:()=>import('@/views/more/summaryPage.vue')
+    },
   ],
 })
 
