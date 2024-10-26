@@ -61,7 +61,7 @@ const generateImage = () => {
           border-radius: 20px;
         "
       >
-        <div class="el-row">
+        <div class="el-r">
           <div>
             <button class="main-top" style="color: #fff" onclick="xinduihua()">
               +新对话
@@ -168,7 +168,7 @@ const generateImage = () => {
                 /><span style="font-size: 10px">1024*1024</span>
               </div>
 
-              <div class="fenge1" >
+              <div class="fenge1">
                 <img
                   src="@/assets/chicun.png"
                   width="50px"
@@ -257,7 +257,7 @@ const generateImage = () => {
     opacity: 1;
   }
 }
-.el-row {
+.el-r {
   width: 18%;
   height: 100%;
   background-image: linear-gradient(

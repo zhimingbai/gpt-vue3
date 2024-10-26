@@ -2,7 +2,7 @@
 import navSection from '@/components/navSection.vue'
 // import { ElMessage } from 'element-plus';
 import { ref } from 'vue'
-import {useTokenStore} from '@/stores/index'
+import { useTokenStore } from '@/stores/index'
 
 // 显示token数
 const tokenStore = useTokenStore()
@@ -16,7 +16,7 @@ async function sendQuestion() {
   } else {
     console.log(questionInput.value)
     // 这里之后要发送axios请求，发送成功后清空输入框
-    // TODO: 这里应该是发送axios请求，但是因为技术原因，暂且不实现  
+    // TODO: 这里应该是发送axios请求，但是因为技术原因，暂且不实现
     // 这里报错，不影响，如果真的导入了ElMessage反而还会导致一些其他问题。
     ElMessage.success('发送成功')
     // toeken数量减少
@@ -31,9 +31,6 @@ async function sendQuestion() {
 const btnHistory = () => {
   ElMessage.error('正在开发中')
 }
-
-
-
 </script>
 <template>
   <div class="talk-page">
@@ -49,7 +46,7 @@ const btnHistory = () => {
           border-radius: 20px;
         "
       >
-        <div class="el-row">
+        <div class="el-r">
           <div>
             <button class="main-top" style="color: #fff" onclick="xinduihua()">
               +新对话
@@ -167,7 +164,7 @@ const btnHistory = () => {
     opacity: 1;
   }
 }
-.el-row {
+.el-r {
   width: 18%;
   height: 100%;
   background-image: linear-gradient(

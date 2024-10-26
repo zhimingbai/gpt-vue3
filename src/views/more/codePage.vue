@@ -5,8 +5,8 @@ import { useTokenStore } from '@/stores/index.js'
 // import { ElMessage } from 'element-plus'
 
 // token数量
-const tokenStore=useTokenStore()
-const tokenCount=ref(tokenStore.token)
+const tokenStore = useTokenStore()
+const tokenCount = ref(tokenStore.token)
 
 // 转换按钮
 const askQuestion = () => {
@@ -31,7 +31,7 @@ const history = () => {
           border-radius: 20px;
         "
       >
-        <div class="el-row">
+        <div class="el-r">
           <div class="main-top">
             <span style="color: #fff">+新对话</span>
           </div>
@@ -165,7 +165,7 @@ const history = () => {
   }
 }
 
-.el-row {
+.el-r {
   width: 18%;
   height: 100%;
   background-image: linear-gradient(

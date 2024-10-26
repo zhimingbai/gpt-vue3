@@ -4,14 +4,13 @@ import navSection from '@/components/navSection.vue'
 
 // TODO: 功能正在开发，该页面暂不可用
 
-
 // 历史记录
 const history = () => {
-  ElMessage.error('该功能正在开发中，请等待更新');
+  ElMessage.error('该功能正在开发中，请等待更新')
 }
 // 点击提交
-const submit = () => { 
-  ElMessage.error('该功能正在开发中，请等待更新');
+const submit = () => {
+  ElMessage.error('该功能正在开发中，请等待更新')
 }
 </script>
 <template>
@@ -28,7 +27,7 @@ const submit = () => {
           border-radius: 20px;
         "
       >
-        <div class="el-row">
+        <div class="el-r">
           <div class="main-top">
             <span style="color: #fff">+新对话</span>
           </div>
@@ -98,7 +97,7 @@ const submit = () => {
     opacity: 1;
   }
 }
-.el-row {
+.el-r {
   width: 18%;
   height: 80vh;
   background-image: linear-gradient(

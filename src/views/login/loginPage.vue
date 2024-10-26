@@ -4,6 +4,8 @@ import { User, Lock } from '@element-plus/icons-vue'
 import router from '@/router/index.js'
 import { useUserStore } from '@/stores/index'
 
+// TODO: 进入这个页面有几率，会出现页面紊乱的情况
+
 // 用于预校验
 const from = ref()
 // 表单数据
@@ -87,9 +89,14 @@ const login = async () => {
 onMounted(async () => {
   // TODO: 获取验证码图片的axios
 })
+
+// setTimeout(() => {
+//   location.reload()
+//   console.log(11)
+// }, 0)
 </script>
 <template>
-  <el-row>
+  <el-row style="width: 100%;">
     <el-col class="login-page" :span="12">
       <el-col :span="8" :offset="12" class="left">
         <section class="image">
@@ -217,10 +224,7 @@ onMounted(async () => {
 /* 左边 */
 .login-page {
   height: 100vh;
-  /* background-image: url('@/assets/login-page-bg.jpg');
-  background-size: cover; */
 }
-
 .textBlack {
   color: #333;
 }

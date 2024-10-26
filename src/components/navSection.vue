@@ -2,6 +2,7 @@
 import { RouterLink } from 'vue-router'
 import { ref, onMounted } from 'vue'
 import { useUserStore } from '@/stores/index'
+import router from '@/router'
 
 // 判断是否登录
 const isLogin = ref(false)
@@ -16,10 +17,14 @@ onMounted(() => {
 })
 
 // 退出登录
-const logout = () => { 
+const logout = () => {
   userStore.removeUser()
   // isLogin.value = false
+  // 跳转到登录页面
+  router.push('/')
 }
+
+
 </script>
 <template>
   <!-- 这里可以复用，应为全局组件 -->
@@ -79,9 +84,14 @@ const logout = () => {
         <router-link to="/login">登录</router-link>
       </div>
       <div class="navl" v-else>
-        <div style="width: 100%;">
+        <div style="width: 100%">
           <!-- TODO bug: 这里头像和用户名稍微有点bug，如果名字太长会导致换行，需要调整 -->
-          <img src="@/assets/geren.png" width="25rem" height="25rem" style="margin-right: 0.5rem;" />
+          <img
+            src="@/assets/geren.png"
+            width="25rem"
+            height="25rem"
+            style="margin-right: 0.5rem"
+          />
           <span>{{ userStore.user.username }}</span>
         </div>
         <div class="subnav" id="geren">

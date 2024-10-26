@@ -15,7 +15,7 @@ import navSection from '@/components/navSection.vue'
           border-radius: 20px;
         "
       >
-        <div class="el-row">
+        <div class="el-r">
           <div class="main-top">
             <span style="color: #fff">+新对话</span>
           </div>
@@ -192,7 +192,7 @@ import navSection from '@/components/navSection.vue'
     opacity: 1;
   }
 }
-.el-row {
+.el-r {
   width: 18%;
   height: 80vh;
   background-image: linear-gradient(

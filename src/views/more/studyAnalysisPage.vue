@@ -34,7 +34,7 @@ const change = () => {
           border-radius: 20px;
         "
       >
-        <div class="el-row">
+        <div class="el-r">
           <div class="main-top">
             <span style="color: #fff">+新对话</span>
           </div>
@@ -80,7 +80,7 @@ const change = () => {
               >
             </div>
             <div class="tok">
-              <span>您的tokens数：{{tokenCount}} </span>
+              <span>您的tokens数：{{ tokenCount }} </span>
               <span id="token-display" STYLE="color: #00c6fb;"></span>
             </div>
           </div>
@@ -210,7 +210,7 @@ const change = () => {
     opacity: 1;
   }
 }
-.el-row {
+.el-r {
   width: 18%;
   height: 100%;
   background-image: linear-gradient(

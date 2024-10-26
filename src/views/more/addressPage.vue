@@ -25,7 +25,7 @@ const askQuestion = () => {
           border-radius: 20px;
         "
       >
-        <div class="el-row">
+        <div class="el-r">
           <div class="main-top">
             <span style="color: #fff">+新对话</span>
           </div>
@@ -36,7 +36,7 @@ const askQuestion = () => {
               height="25px"
               style="margin: 10px"
             />
-            <span >2024-01-18</span>
+            <span>2024-01-18</span>
           </div>
         </div>
         <div class="main-mid">
@@ -120,7 +120,7 @@ const askQuestion = () => {
     opacity: 1;
   }
 }
-.el-row {
+.el-r {
   width: 18%;
   height: 100%;
   background-image: linear-gradient(
