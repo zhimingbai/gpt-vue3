@@ -1,8 +1,25 @@
 <script setup>
 import { RouterLink } from 'vue-router'
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
+import { useUserStore } from '@/stores/index'
 
+// 判断是否登录
 const isLogin = ref(false)
+
+// 获取用户信息
+const userStore = useUserStore()
+// 监听用户登录状态
+onMounted(() => {
+  if (userStore.user.username) {
+    isLogin.value = true
+  }
+})
+
+// 退出登录
+const logout = () => { 
+  userStore.removeUser()
+  // isLogin.value = false
+}
 </script>
 <template>
   <!-- 这里可以复用，应为全局组件 -->
@@ -40,15 +57,15 @@ const isLogin = ref(false)
         技术工具
         <div class="subnav">
           <!-- <a href="#">代码转换</a> -->
-           <router-link to="/code">代码转换</router-link>
+          <router-link to="/code">代码转换</router-link>
         </div>
         <div class="subnav">
           <!-- <a href="#">代码解释</a> -->
-           <router-link to="/code">代码解释</router-link>
+          <router-link to="/code">代码解释</router-link>
         </div>
         <div class="subnav">
           <!-- <a href="#">SQL生成</a> -->
-           <router-link to="/sql">SQL生成</router-link>
+          <router-link to="/sql">SQL生成</router-link>
         </div>
       </div>
       <div class="navl">
@@ -62,21 +79,10 @@ const isLogin = ref(false)
         <router-link to="/login">登录</router-link>
       </div>
       <div class="navl" v-else>
-        <div
-          style="
-            display: flex;
-            width: 100%;
-            justify-content: center;
-            align-items: center;
-          "
-        >
-          <img
-            src="@/assets/geren.png"
-            width="25rem"
-            height="25rem"
-            style="margin-right: 1.5rem"
-          />
-          <div id="usenamePlaceholder"></div>
+        <div style="width: 100%;">
+          <!-- TODO bug: 这里头像和用户名稍微有点bug，如果名字太长会导致换行，需要调整 -->
+          <img src="@/assets/geren.png" width="25rem" height="25rem" style="margin-right: 0.5rem;" />
+          <span>{{ userStore.user.username }}</span>
         </div>
         <div class="subnav" id="geren">
           <a>个人中心</a>
@@ -84,7 +90,7 @@ const isLogin = ref(false)
         <div class="subnav" id="xiugai">
           <a>修改密码</a>
         </div>
-        <div class="subnav">
+        <div class="subnav" @click="logout()">
           <a href="#">退出登录</a>
         </div>
       </div>
@@ -188,15 +194,16 @@ a:hover {
   width: 90%;
   display: flex;
   justify-content: center;
+  /* align-content: center; */
 }
 
 .navl {
-  width: 12rem;
+  width: 16rem;
   font-size: 2.5rem;
   font-weight: 0;
   color: black;
   text-align: center;
-  padding: 2rem 1rem;
+  padding-top: 2rem;
   font-family: Arial, Helvetica, sans-serif;
   position: relative;
   cursor: pointer;
@@ -268,5 +275,9 @@ a:hover {
   height: 5rem;
   line-height: 5rem;
   text-align: center;
+}
+.text-container {
+  display: flex;
+  flex-direction: row;
 }
 </style>

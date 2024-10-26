@@ -1,9 +1,7 @@
 <script setup>
 import navSection from '@/components/navSection.vue'
 import { ref } from 'vue'
-// import router from '@/router';
 
-// TODO: 目前已知bug，因为原本页面是原生写的，因此关于js的逻辑在这里就没有写，后期的话再补上
 /**
  * 目前，首页的页面基本完成，原本页面有关模板引擎的东西我就全部删掉了，首页的视频不显示是因为这个，
  * 视频根js逻辑有关，因为没写所以目前没有，有关a标签跳转的，跳转的路径我目前都是跳本页 #
@@ -186,7 +184,6 @@ function showContent(index) {
               特色模型
             </button>
           </div>
-          <!--          TODO: 这里之后大概率可以用v-for重写-->
           <div class="gnnr">
             <div class="content" v-if="currentId == 1">
               <div id="text1">

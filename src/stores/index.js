@@ -7,3 +7,4 @@ pinia.use(persist)
 export default pinia
 
 export * from '@/stores/modules/user.js'
+export * from '@/stores/modules/token.js'

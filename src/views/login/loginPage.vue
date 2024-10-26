@@ -2,6 +2,7 @@
 import { ref, watch, onMounted } from 'vue'
 import { User, Lock } from '@element-plus/icons-vue'
 import router from '@/router/index.js'
+import { useUserStore } from '@/stores/index'
 
 // 用于预校验
 const from = ref()
@@ -69,11 +70,16 @@ const register = async () => {
   await from.value.validate()
 }
 
+// 存储到pinia中
+const userStore = useUserStore()
+
 // 登录
 const login = async () => {
   // 预校验
   // TODO: 登录的axios
   await from.value.validate()
+  // 存储到pinia中
+  userStore.setUser(fromData.value)
   router.push('/talk')
 }
 
@@ -174,7 +180,7 @@ onMounted(async () => {
         </el-form-item>
         <el-form-item prop="password">
           <el-input
-            v-model="fromData.repassword"
+            v-model="fromData.password"
             :prefix-icon="Lock"
             placeholder="请输入密码"
           ></el-input>

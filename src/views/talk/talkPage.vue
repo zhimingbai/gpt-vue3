@@ -1,14 +1,39 @@
 <script setup>
 import navSection from '@/components/navSection.vue'
+// import { ElMessage } from 'element-plus';
 import { ref } from 'vue'
+import {useTokenStore} from '@/stores/index'
+
+// 显示token数
+const tokenStore = useTokenStore()
+const tokenCount = ref(tokenStore.token)
 
 // 对话框内容
 const questionInput = ref('')
 async function sendQuestion() {
-  console.log(questionInput.value);
-  alert('已发送')
-  questionInput.value = ''
+  if (questionInput.value.trim() === '') {
+    return ElMessage.error('请输入内容')
+  } else {
+    console.log(questionInput.value)
+    // 这里之后要发送axios请求，发送成功后清空输入框
+    // TODO: 这里应该是发送axios请求，但是因为技术原因，暂且不实现  
+    // 这里报错，不影响，如果真的导入了ElMessage反而还会导致一些其他问题。
+    ElMessage.success('发送成功')
+    // toeken数量减少
+    tokenCount.value -= 1
+    tokenStore.token = tokenCount.value
+    questionInput.value = ''
+  }
 }
+
+// 历史记录
+// TODO: 这里因为技术原因，暂且不实现
+const btnHistory = () => {
+  ElMessage.error('正在开发中')
+}
+
+
+
 </script>
 <template>
   <div class="talk-page">
@@ -30,7 +55,7 @@ async function sendQuestion() {
               +新对话
             </button>
           </div>
-          <button class="main-bottom" onclick="lishi()">
+          <button class="main-bottom" @click="btnHistory()">
             <img
               src="@/assets/duihuak.png"
               width="25px"
@@ -100,7 +125,7 @@ async function sendQuestion() {
                 </div>
               </div>
               <div class="tok">
-                <span>您的tokens数：</span>
+                <span>您的tokens数：{{ tokenCount }}</span>
                 <span id="token-display" STYLE="color: #00c6fb;"></span>
               </div>
             </div>
@@ -111,6 +136,7 @@ async function sendQuestion() {
                   id="questionInput"
                   placeholder="说点什么吧"
                   v-model="questionInput"
+                  @keyup.enter="sendQuestion()"
                 ></textarea>
                 <div id="submit-icon" @click="sendQuestion()">
                   <img src="@/assets/fasong.png" width="30px" height="30px" />️
