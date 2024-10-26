@@ -4,12 +4,49 @@ import { ref } from 'vue'
 import img1 from '@/assets/ziran.png'
 import img2 from '@/assets/xieshi.png'
 import img3 from '@/assets/gudian.png'
+// import { ElMessage } from 'element-plus'
+import { useTokenStore } from '@/stores/index'
+// import { ElMessage } from 'element-plus'
 
 const styleImageList = ref([
   { imgSrc: img1, name: '自然' },
   { imgSrc: img2, name: '写实' },
   { imgSrc: img3, name: '古典' },
 ])
+
+// 设置token数量
+const tokenStore = useTokenStore()
+const tokenCount = ref(tokenStore.token)
+
+// 设置生成图片的约束条件
+const constraints = ref({
+  style: '自然',
+  size: '512*512',
+  num: 1,
+  content: '无',
+})
+
+// 历史记录
+const historyList = () => {
+  ElMessage.error('功能正在开发')
+}
+
+// 处理风格点击
+const styleClick = name => {
+  constraints.value.style = name
+}
+// 处理图片尺寸点击
+const sizeClick = size => {
+  constraints.value.size = size
+}
+
+// 处理点击生成图片
+const generateImage = () => {
+  // 处理输入内容
+  console.log(constraints.value)
+  ElMessage.success('图片正在生成')
+  // TODO: 生成图片axios
+}
 </script>
 <template>
   <div class="image-page">
@@ -31,7 +68,7 @@ const styleImageList = ref([
               +新对话
             </button>
           </div>
-          <button class="main-bottom" onclick="lishi()">
+          <button class="main-bottom" @click="historyList()">
             <img
               src="@/assets/duihuak.png"
               width="25px"
@@ -68,7 +105,7 @@ const styleImageList = ref([
               >
             </div>
             <div class="tok">
-              <span>您的tokens数：</span>
+              <span>您的tokens数：{{ tokenCount }}</span>
               <span id="token-display" STYLE="color: #00c6fb;"></span>
             </div>
           </div>
@@ -107,6 +144,7 @@ const styleImageList = ref([
                   name="fenge"
                   id="fengeRadio1"
                   :value="item.name"
+                  @click="styleClick(item.name)"
                 />{{ item.name }}
               </div>
             </div>
@@ -127,9 +165,11 @@ const styleImageList = ref([
                   name="fenge1"
                   id="fengeRadio4"
                   value="1024*1024"
+                  @click="sizeClick('512*512')"
                 /><span style="font-size: 10px">1024*1024</span>
               </div>
-              <div class="fenge1" onClick="selectRadio('fengeRadio5')">
+
+              <div class="fenge1" >
                 <img
                   src="@/assets/chicun.png"
                   width="50px"
@@ -141,6 +181,7 @@ const styleImageList = ref([
                   name="fenge1"
                   id="fengeRadio5"
                   value="512*512"
+                  @click="sizeClick('512*512')"
                 /><span style="font-size: 10px">512*512</span>
               </div>
             </div>
@@ -151,6 +192,7 @@ const styleImageList = ref([
             <select
               id="ges"
               style="width: 100%; height: 40px; border-radius: 5px 5px 5px 5px"
+              v-model="constraints.num"
             >
               <option>1</option>
               <option>2</option>
@@ -160,6 +202,7 @@ const styleImageList = ref([
           <div>
             <span>主要内容</span>
             <textarea
+              v-model="constraints.content"
               id="questionInput"
               placeholder="描述要创建的图像，例如“晶莹剔透的牡丹花”"
               autocomplete="off"
@@ -185,7 +228,7 @@ const styleImageList = ref([
               "
             />
           </div>
-          <button onclick="sctp()" class="btnsc">生成图片</button>
+          <button class="btnsc" @click="generateImage()">生成图片</button>
         </div>
       </div>
     </main>
