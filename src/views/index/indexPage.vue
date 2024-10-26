@@ -296,7 +296,8 @@ function showContent(index) {
           一款强大的人工智能绘画工具，为用户提供了各种创意的绘图功能。
         </div>
         <div class="an-tu">
-          <a href="#" class="tpt">前去体验<span class="arrow"></span></a>
+          <!-- <a href="#" class="tpt">前去体验<span class="arrow"></span></a> -->
+          <router-link to="/talk" class="tpt">前去体验<span class="arrow"></span></router-link>
         </div>
       </div>
     </div>
