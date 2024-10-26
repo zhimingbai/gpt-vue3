@@ -202,7 +202,7 @@ const styleImageList = ref([
 
 .el-main {
   display: flex;
-  height: 100%;
+  height: 100vh;
   padding: 5% 10% 20px 10%;
   position: relative;
   animation: fadeIn 2s forwards;
@@ -217,7 +217,7 @@ const styleImageList = ref([
 }
 .el-row {
   width: 18%;
-  height: 80vh;
+  height: 100%;
   background-image: linear-gradient(
     to top,
     #f3e7e9 0%,
@@ -248,18 +248,19 @@ const styleImageList = ref([
   align-items: center;
 }
 .main-right {
-  width: 33%;
-  height: 80vh;
+  width: 35%;
+  height: 100%;
   border-radius: 0 15px 15px 0;
   text-align: left;
   border: 3px solid #82b4ff;
   padding: 20px 20px 0 20px;
+  /* padding-right: 0; */
   background-color: white;
-  overflow: hidden;
+  overflow: auto;
 }
 .main-mid {
   width: 47%;
-  height: 80vh;
+  height: 100%;
   text-align: left;
   border-top: 3px solid #82b4ff;
   border-bottom: 3px solid #82b4ff;

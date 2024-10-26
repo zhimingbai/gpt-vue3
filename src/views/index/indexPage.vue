@@ -11,9 +11,9 @@ import { ref } from 'vue'
  * 后续我希望使用less或scss，或者是 Tailwind CSS 来进行重写
  */
 
-// TODO: showContent() 目前只返回index和调用的对象，因为原本的函数中牵扯到一些原生的页面逻辑操作
-
+//  用来判断当前显示哪个内容
 const currentId = ref(1)
+//  更改currentId的值
 function showContent(index) {
   console.log(index)
   // router.push('/mp4')
@@ -296,7 +296,6 @@ function showContent(index) {
           一款强大的人工智能绘画工具，为用户提供了各种创意的绘图功能。
         </div>
         <div class="an-tu">
-          <!-- <a href="#" class="tpt">前去体验<span class="arrow"></span></a> -->
           <router-link to="/talk" class="tpt">前去体验<span class="arrow"></span></router-link>
         </div>
       </div>

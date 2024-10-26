@@ -1,5 +1,14 @@
 <script setup>
 import navSection from '@/components/navSection.vue'
+import { ref } from 'vue'
+
+// 对话框内容
+const questionInput = ref('')
+async function sendQuestion() {
+  console.log(questionInput.value);
+  alert('已发送')
+  questionInput.value = ''
+}
 </script>
 <template>
   <div class="talk-page">
@@ -101,9 +110,9 @@ import navSection from '@/components/navSection.vue'
                 <textarea
                   id="questionInput"
                   placeholder="说点什么吧"
-                  onkeypress="handleKeyPress(event)"
+                  v-model="questionInput"
                 ></textarea>
-                <div id="submit-icon" onclick="submitText()">
+                <div id="submit-icon" @click="sendQuestion()">
                   <img src="@/assets/fasong.png" width="30px" height="30px" />️
                 </div>
                 <div id="loading-spinner"></div>
@@ -116,66 +125,10 @@ import navSection from '@/components/navSection.vue'
   </div>
 </template>
 <style scoped>
-::-webkit-scrollbar {
-  width: 10px;
-  background-color: white;
-}
-::-webkit-scrollbar-thumb {
-  border-radius: 10px 10px 10px 10px;
-  background-color: #82b4ff;
-}
-
-.dropdown-content a {
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {
-  background-color: #ccc;
-  display: block;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-#Modal1 {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#Modal2 {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.btn {
-  padding: 0 20px;
-  font-size: 14px;
-  border-radius: 10px;
-  font-weight: 400;
-  background-color: #00c6fb;
-}
-.btn:hover {
-  cursor: pointer;
-  background-color: white;
-}
 .el-main {
   box-sizing: border-box;
   display: flex;
-  height: 100%;
+  height: 100vh;
   padding: 5% 10% 20px 10%;
   position: relative;
   animation: fadeIn 2s forwards;
@@ -190,6 +143,7 @@ import navSection from '@/components/navSection.vue'
 }
 .el-row {
   width: 18%;
+  height: 100%;
   background-image: linear-gradient(
     to top,
     #f3e7e9 0%,
@@ -221,8 +175,8 @@ import navSection from '@/components/navSection.vue'
   border: #82b4ff solid 2px;
 }
 .box-right {
-  width: 80%;
-  height: 99.3%;
+  width: 100%;
+  height: 100%;
   background-color: white;
   margin: 0;
   border-radius: 0 15px 15px 0;
@@ -232,7 +186,7 @@ import navSection from '@/components/navSection.vue'
 }
 .bottom-box {
   width: 70%;
-  height: 20vh;
+  height: 25vh;
   padding: 20px;
   border-radius: 8px;
   background: rgb(255, 255, 255);
