@@ -18,6 +18,11 @@ onMounted(() => {
 
 // 退出登录
 const logout = () => {
+  // 如果是首页，就直接更改首页的用户信息
+  if (location.href==='http://localhost:5173/'){
+    userStore.removeUser()
+    isLogin.value = false
+  }
   userStore.removeUser()
   // isLogin.value = false
   // 跳转到登录页面
