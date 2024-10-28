@@ -9,9 +9,10 @@ import navSection from '@/components/navSection.vue'
         style="
           display: flex;
           width: 100%;
-          box-shadow:
-            rgba(1, 4, 9, 0.4) 0px 6px 12px -3px,
-            rgba(1, 4, 9, 0.4) 0px 6px 18px 0px;
+          /*日后改阴影*/
+          /*box-shadow:*/
+          /*  rgba(1, 4, 9, 0.4) 0px 6px 12px -3px,*/
+          /*  rgba(1, 4, 9, 0.4) 0px 6px 18px 0px;*/
           border-radius: 20px;
         "
       >
