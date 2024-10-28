@@ -20,70 +20,68 @@ onMounted(() => {
 const logout = () => {
   userStore.removeUser()
   // isLogin.value = false
-  // 跳转到登录页面
-  router.push('/')
+  location.reload()
 }
 
 
 </script>
 <template>
-  <!-- 这里可以复用，应为全局组件 -->
+<!-- 这里可以复用，应为全局组件 -->
   <nav class="shnav">
+<!--  5个导航菜单  -->
     <div class="shnav1">
+
+<!--      1、首页-->
       <div class="navl">
-        <router-link to="/">首页</router-link>
+        <a href=""><router-link to="/">首页</router-link></a>
       </div>
+
+<!--      2、通用-->
       <div class="navl">
-        通用
-        <div class="subnav">
-          <!-- <a href="#">对话</a> -->
-          <router-link to="/talk">对话</router-link>
-        </div>
-        <div class="subnav">
-          <!-- <a href="#">图片</a> -->
-          <router-link to="/image">图片</router-link>
-        </div>
-        <div class="subnav">
-          <!-- <a href="#">提取文字</a> -->
-          <router-link to="/word">提取文字</router-link>
-        </div>
+        <a href="">通用</a>
+        <ul class="subnav">
+          <li><a href=""><router-link to="/talk">对话</router-link></a></li>
+          <li><a href=""><router-link to="/image">图片</router-link></a></li>
+          <li><a href=""><router-link to="/word">提取文字</router-link></a></li>
+        </ul>
       </div>
+
+<!--      3、助教助手-->
       <div class="navl">
-        助教助手
-        <div class="subnav">
-          <!-- <a href="#">学习分析</a> -->
-          <router-link to="/studyAnalysis">学习分析</router-link>
-        </div>
-        <div class="subnav">
-          <a href="#">教研备课</a>
-        </div>
+        <a href="">助教助手</a>
+        <ul class="subnav">
+          <li><a href=""><router-link to="/studyAnalysis">学习分析</router-link></a></li>
+          <li><a href=""><a href="#">教研备课</a></a></li>
+        </ul>
       </div>
+
+<!--      4、技术工具-->
       <div class="navl">
-        技术工具
-        <div class="subnav">
-          <!-- <a href="#">代码转换</a> -->
-          <router-link to="/code">代码转换</router-link>
-        </div>
-        <div class="subnav">
-          <!-- <a href="#">代码解释</a> -->
-          <router-link to="/code">代码解释</router-link>
-        </div>
-        <div class="subnav">
-          <!-- <a href="#">SQL生成</a> -->
-          <router-link to="/sql">SQL生成</router-link>
-        </div>
+        <a href="">技术工具</a>
+        <ul class="subnav">
+          <li><a href=""><router-link to="/code">代码转换</router-link></a></li>
+          <li><a href=""><router-link to="/code">代码解释</router-link></a></li>
+          <li><a href=""><router-link to="/sql">SQL生成</router-link></a></li>
+        </ul>
       </div>
+
+<!--      5、更多-->
       <div class="navl">
-        <!-- <a href="#">更多</a> -->
-        <router-link to="/more">更多</router-link>
+        <a href=""><router-link to="/more">更多</router-link></a>
       </div>
     </div>
+
+<!--  用户  -->
     <div style="margin-right: 2rem">
+
+<!--      未登录-->
       <div class="navl" v-if="!isLogin">
-        <!-- <a href="#">登录</a> -->
         <router-link to="/login">登录</router-link>
       </div>
+
+<!--      已登录-->
       <div class="navl" v-else>
+
         <div style="width: 100%">
           <!-- TODO bug: 这里头像和用户名稍微有点bug，如果名字太长会导致换行，需要调整 -->
           <img
@@ -94,15 +92,13 @@ const logout = () => {
           />
           <span>{{ userStore.user.username }}</span>
         </div>
-        <div class="subnav" id="geren">
-          <a>个人中心</a>
-        </div>
-        <div class="subnav" id="xiugai">
-          <a>修改密码</a>
-        </div>
-        <div class="subnav" @click="logout()">
-          <a href="#">退出登录</a>
-        </div>
+
+        <ul class="subnav">
+          <li id="geren"><a>个人中心</a></li>
+          <li id="xiugai"><a>修改密码</a></li>
+          <li @click="logout()"><a href="#">退出登录</a></li>
+        </ul>
+
       </div>
     </div>
     <div id="Modal1" style="display: none">
@@ -178,8 +174,9 @@ const logout = () => {
   </nav>
 </template>
 <style scoped>
+
 a:hover {
-  color: mediumpurple;
+  color: #7878ef;
 }
 
 .sp {
@@ -198,57 +195,59 @@ a:hover {
   width: 100%;
   position: absolute;
   z-index: 1;
+  margin-top: 15px;
 }
 
 .shnav1 {
   width: 90%;
   display: flex;
   justify-content: center;
-  /* align-content: center; */
 }
 
 .navl {
-  width: 16rem;
-  font-size: 2.5rem;
-  font-weight: 0;
-  color: black;
+  width: 10rem;
   text-align: center;
-  padding-top: 2rem;
   font-family: Arial, Helvetica, sans-serif;
   position: relative;
-  cursor: pointer;
-  overflow: hidden;
-  transition: all 0.5s;
+  margin-left: 20px;
+  margin-right: 20px;
+  transition: all 0.4s;
 }
 
-.navl:hover {
-  border-radius: 2.5rem;
-  margin: 1rem 0 12rem 0;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.navl:hover .subnav {
-  max-height: 30rem; /* 设置二级导航显示高度 */
-  opacity: 1; /* 显示二级导航 */
-  transform: translateY(0);
+.navl>a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 22px;
+  border-bottom: 4px solid #8e8eff;
+  padding-bottom: 7px;
 }
 
 .subnav {
-  max-height: 0;
-  overflow: auto;
-  transition:
-    max-height 0.2s,
-    opacity 0.5s,
-    transform 0.5s;
-  position: initial;
-  top: 100%;
-  left: 0;
+  position: absolute;
   width: 100%;
-  background: rgba(255, 255, 255, 0);
-  padding: 0;
-  opacity: 0;
-  transform: translateY(-0.2rem); /* 初始位置 */
+  overflow: hidden;
+  max-height: 0;
+  transition: .5s;
+  border-radius: 0 0 10px 10px;
+  background-color: rgba(142, 142, 255, 0.5);
+  font-size: 20px;
+  color: #ffffff;
 }
+
+.navl:hover{
+  //background-color: #00ff0a;
+}
+
+.navl:hover>.subnav{
+  max-height: 500px;
+}
+
+.subnav li{
+  margin: 8px;
+}
+
 
 .text-slider {
   width: 30rem;

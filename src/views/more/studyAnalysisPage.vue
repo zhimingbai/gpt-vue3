@@ -28,12 +28,14 @@ const change = () => {
         style="
           display: flex;
           width: 100%;
-          box-shadow:
-            rgba(1, 4, 9, 0.4) 0px 6px 12px -3px,
-            rgba(1, 4, 9, 0.4) 0px 6px 18px 0px;
+          /*这个阴影一般，日后可以做个好看的*/
+          /*box-shadow:*/
+          /*  rgba(1, 4, 9, 0.4) 0px 6px 12px -3px,*/
+          /*  rgba(1, 4, 9, 0.4) 0px 6px 18px 0px;*/
           border-radius: 20px;
         "
       >
+<!--   左侧的新对话，以后要有历史记录     -->
         <div class="el-r">
           <div class="main-top">
             <span style="color: #fff">+新对话</span>
@@ -48,6 +50,8 @@ const change = () => {
             <span>2024-01-18</span>
           </div>
         </div>
+
+<!--    中间的生产结果    -->
         <div class="main-mid">
           <span style="font-size: 15px; color: black"
             ><b>生产结果</b><br
@@ -66,6 +70,8 @@ const change = () => {
             </span>
           </div>
         </div>
+
+<!--    右边的表单内容    -->
         <div class="main-right">
           <div
             style="

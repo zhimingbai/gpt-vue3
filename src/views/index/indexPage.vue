@@ -54,18 +54,13 @@ function showContent(index) {
         >
           助力教育场景与大模型结合，创造智能化教学新范式
         </div>
+
         <div style="display: flex; width: 100%; margin-top: 3rem">
           <router-link to="/talk" class="annv" style="line-height: 5rem">
-            点击体验
+            <a href="">点击体验</a>
           </router-link>
-          <!-- <button class="annv text-slider" id="textSlider">
-            <ul>
-              <li><a href="#">文生图</a></li>
-              <li><a href="#">提取文字</a></li>
-              <li><a href="#">文生图</a></li>
-            </ul>
-          </button> -->
         </div>
+
       </div>
       <div class="todown">
         <div class="jiantou jfirst"></div>
@@ -308,35 +303,50 @@ function showContent(index) {
   width: 20rem;
   height: 5rem;
   margin: 2rem 7%;
-  background-color: #00c6fb;
   font-family: '微软雅黑 Light', serif;
   font-size: 2rem;
   font-weight: 600;
-  color: black;
   text-align: center;
   text-transform: uppercase;
-  border: 1px solid black;
+  //border: 1px solid black;
   cursor: pointer;
   position: relative;
   overflow: hidden;
   border-radius: 2rem;
+
+  display:inline-block;
+  color: #fff;
+  line-height: 60px;
+  text-decoration:none;
+  background: linear-gradient(90deg, #03a9f4,#f441a5,#7878ef,#03a9f4);
+  background-size: 400%;
+  animation: animate 8s linear infinite;
 }
 
-.annv::before {
+.annv:before {
   content: '';
   position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 300%;
-  height: 300%;
-  background-color: rgba(85, 85, 255, 0.5);
-  transition: all 0.5s;
-  border-radius: 50%;
-  transform: translate(-50%, -50%) scale(0);
+
+  left: -5px;
+  top: -5px;
+  right:-5px;
+  bottom:-5px;
+  z-index:-1;
+  background:linear-gradient(90deg,
+  #03a9f4,
+  #f441a5,
+  #ffeb3b,
+  #03a9f4
+  );
+
+  background-size: 400%;
+  opacity: 0;
+  transition: all 1s;
 }
 
-.annv:hover::before {
-  transform: translate(-50%, -50%) scale(1);
+.annv:hover:before {
+  filter: blur(20px);
+  opacity: 1;
 }
 
 #Modal1 {
@@ -403,6 +413,15 @@ function showContent(index) {
   height: 10rem;
   background-image: url('@/assets/logo2.png');
   background-size: 10rem;
+}
+
+@keyframes animate {
+  0%{
+    background-position: 0 0;
+  }
+  100%{
+    background-position: 400% 0;
+  }
 }
 
 @keyframes rotate-spiral {
