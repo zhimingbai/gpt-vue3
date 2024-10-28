@@ -247,6 +247,7 @@ a:hover {
 
 .navl:hover>.subnav{
   max-height: 500px;
+  transition: all 1.5s;
 }
 
 .subnav li{
