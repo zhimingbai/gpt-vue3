@@ -63,16 +63,16 @@ const generateImage = () => {
       >
         <div class="el-r">
           <div>
-            <button class="main-top" style="color: #fff" onclick="xinduihua()">
+            <button class="main-top" onclick="xinduihua()" style="color: #fff">
               +新对话
             </button>
           </div>
           <button class="main-bottom" @click="historyList()">
             <img
-              src="@/assets/duihuak.png"
-              width="25px"
               height="25px"
+              src="@/assets/duihuak.png"
               style="margin: 10px"
+              width="25px"
             />
             <span>历史记录</span>
           </button>
@@ -121,10 +121,10 @@ const generateImage = () => {
               "
             >
               <div
-                class="fenge"
-                onClick="selectRadio('fengeRadio1')"
                 v-for="(item, index) in styleImageList"
                 :key="index"
+                class="fenge"
+                onClick="selectRadio('fengeRadio1')"
                 style="
                   display: flex;
                   flex-wrap: wrap;
@@ -134,15 +134,15 @@ const generateImage = () => {
               >
                 <img
                   :src="item.imgSrc"
-                  width="30px"
                   height="30px"
                   style="margin: 5px"
+                  width="30px"
                 />
                 <input
-                  type="radio"
-                  name="fenge"
                   id="fengeRadio1"
                   :value="item.name"
+                  name="fenge"
+                  type="radio"
                   @click="styleClick(item.name)"
                 />{{ item.name }}
               </div>
@@ -154,15 +154,15 @@ const generateImage = () => {
             <div style="display: flex; width: 100%; margin-top: 20px">
               <div class="fenge1" onClick="selectRadio('fengeRadio4')">
                 <img
-                  src="@/assets/chicun.png"
-                  width="50px"
                   height="50px"
+                  src="@/assets/chicun.png"
                   style="margin: 5px"
+                  width="50px"
                 />
                 <input
-                  type="radio"
-                  name="fenge1"
                   id="fengeRadio4"
+                  name="fenge1"
+                  type="radio"
                   value="1024*1024"
                   @click="sizeClick('512*512')"
                 /><span style="font-size: 10px">1024*1024</span>
@@ -170,15 +170,15 @@ const generateImage = () => {
 
               <div class="fenge1">
                 <img
-                  src="@/assets/chicun.png"
-                  width="50px"
                   height="50px"
+                  src="@/assets/chicun.png"
                   style="margin: 5px"
+                  width="50px"
                 />
                 <input
-                  type="radio"
-                  name="fenge1"
                   id="fengeRadio5"
+                  name="fenge1"
+                  type="radio"
                   value="512*512"
                   @click="sizeClick('512*512')"
                 /><span style="font-size: 10px">512*512</span>
@@ -190,8 +190,8 @@ const generateImage = () => {
             <br />
             <select
               id="ges"
-              style="width: 100%; height: 40px; border-radius: 5px 5px 5px 5px"
               v-model="constraints.num"
+              style="width: 100%; height: 40px; border-radius: 5px 5px 5px 5px"
             >
               <option>1</option>
               <option>2</option>
@@ -201,11 +201,11 @@ const generateImage = () => {
           <div>
             <span>主要内容</span>
             <textarea
-              v-model="constraints.content"
               id="questionInput"
-              placeholder="描述要创建的图像，例如“晶莹剔透的牡丹花”"
+              v-model="constraints.content"
               autocomplete="off"
               maxlength="300px"
+              placeholder="描述要创建的图像，例如“晶莹剔透的牡丹花”"
               style="
                 width: 100%;
                 height: 10vh;
@@ -216,8 +216,6 @@ const generateImage = () => {
             ></textarea>
             <input
               name="button"
-              type="button"
-              value="提示词优化"
               style="
                 width: 100px;
                 height: 40px;
@@ -225,6 +223,8 @@ const generateImage = () => {
                 background: white;
                 border: grey solid 1px;
               "
+              type="button"
+              value="提示词优化"
             />
           </div>
           <button class="btnsc" @click="generateImage()">生成图片</button>
@@ -249,6 +249,7 @@ const generateImage = () => {
   position: relative;
   animation: fadeIn 2s forwards;
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -257,6 +258,7 @@ const generateImage = () => {
     opacity: 1;
   }
 }
+
 .el-r {
   width: 18%;
   height: 100%;
@@ -270,6 +272,7 @@ const generateImage = () => {
   border-radius: 15px 0 0 15px;
   padding: 10px;
 }
+
 .main-top {
   width: 100%;
   height: 50px;
@@ -278,6 +281,7 @@ const generateImage = () => {
   line-height: 50px;
   text-align: center;
 }
+
 .main-bottom {
   width: 100%;
   height: 60px;
@@ -289,6 +293,7 @@ const generateImage = () => {
   justify-content: center;
   align-items: center;
 }
+
 .main-right {
   width: 35%;
   height: 100%;
@@ -300,6 +305,7 @@ const generateImage = () => {
   background-color: white;
   overflow: auto;
 }
+
 .main-mid {
   width: 47%;
   height: 100%;
@@ -309,6 +315,7 @@ const generateImage = () => {
   background-color: white;
   padding: 20px 20px 0 20px;
 }
+
 .div1n {
   display: none;
   width: 100%;
@@ -317,6 +324,7 @@ const generateImage = () => {
   padding: 10% 0 20px 20px;
   overflow-y: scroll;
 }
+
 .btnsc {
   margin-top: 20px;
   width: 100%;
@@ -325,6 +333,7 @@ const generateImage = () => {
   border-radius: 5px 5px 5px 5px;
   border: solid 1px;
 }
+
 .fenge {
   width: 60px;
   height: 60px;
@@ -334,10 +343,12 @@ const generateImage = () => {
   border: 2px solid grey;
   border-radius: 10px;
 }
+
 .fenge:hover {
   background-color: #6f86d6;
   color: white;
 }
+
 .fenge1 {
   width: 80px;
   height: 80px;
@@ -347,10 +358,12 @@ const generateImage = () => {
   border: 2px solid grey;
   border-radius: 10px;
 }
+
 .fenge1:hover {
   background-color: #6f86d6;
   color: white;
 }
+
 #loading-spinner {
   border: 5px solid rgba(0, 0, 0, 0.1);
   border-top: 5px solid #3498db;
@@ -360,6 +373,7 @@ const generateImage = () => {
   animation: spin 1s linear infinite;
   display: none;
 }
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -368,6 +382,7 @@ const generateImage = () => {
     transform: rotate(360deg);
   }
 }
+
 .tok {
   padding: 0;
 }

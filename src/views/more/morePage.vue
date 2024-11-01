@@ -15,7 +15,6 @@ import img10 from '@/assets/jieshi.png'
 import img11 from '@/assets/sql.png'
 import img12 from '@/assets/tqdz.png'
 
-
 const sectionLinkList = ref([
   { imgSrc: img1, name: '学习分析', herf: '/studyAnalysis' },
   { imgSrc: img2, name: '教研备课', herf: '#' },
@@ -40,25 +39,25 @@ const sectionLinkList = ref([
           <h2 class="h2b">更多工具</h2>
           <div class="search-box">
             <input
-              type="text"
               id="searchInput"
               placeholder="请输入所需的工具名.."
+              type="text"
             />
             <!-- TODO: 搜索功能, 目前没有实现,不会 -->
-            <button >
-              <img src="@/assets/ss.png" width="40px" height="40px" />
+            <button>
+              <img height="40px" src="@/assets/ss.png" width="40px" />
             </button>
           </div>
         </div>
-        <div class="container" id="buttonContainer">
+        <div id="buttonContainer" class="container">
           <router-link
             v-for="(item, index) in sectionLinkList"
             :key="index"
-            class="item"
             :to="item.herf"
+            class="item"
           >
             <div style="margin: 10px 0">
-              <img :src="item.imgSrc" width="40px" height="40px" />
+              <img :src="item.imgSrc" height="40px" width="40px" />
             </div>
             <span>{{ item.name }}</span>
           </router-link>
@@ -84,6 +83,7 @@ const sectionLinkList = ref([
   position: relative;
   animation: fadeIn 2s forwards;
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -92,6 +92,7 @@ const sectionLinkList = ref([
     opacity: 1;
   }
 }
+
 .main {
   width: 100%;
   height: 100%;
@@ -100,12 +101,14 @@ const sectionLinkList = ref([
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.6);
 }
+
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 10px;
   padding: 0 10%;
 }
+
 .container a {
   padding: 10%;
   box-sizing: border-box;
@@ -118,10 +121,12 @@ const sectionLinkList = ref([
   text-decoration: none;
   transition: background-color 0.3s;
 }
+
 .container a:hover {
   background-color: #00bfff;
   color: white;
 }
+
 .wenzi {
   display: flex;
   justify-content: space-around;
@@ -129,12 +134,14 @@ const sectionLinkList = ref([
   width: 100%;
   margin-bottom: 30px;
 }
+
 .h2b {
   font-size: 40px;
   height: 60px;
   font-weight: 200;
   border-bottom: 2px solid #00c6fb;
 }
+
 .search-box {
   display: flex;
   justify-content: center;
@@ -159,9 +166,11 @@ const sectionLinkList = ref([
   cursor: pointer;
   transition: background-color 0.3s;
 }
+
 .search-box button:hover {
   background-color: #ccc;
 }
+
 .xian {
   width: 80%;
   height: 20px;

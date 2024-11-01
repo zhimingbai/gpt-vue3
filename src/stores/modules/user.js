@@ -6,10 +6,12 @@ export const useUserStore = defineStore(
   () => {
     // user
     const user = ref({})
+
     // 设置用户信息
     function setUser(newUser) {
       user.value = newUser
     }
+
     // 删除用户信息
     function removeUser() {
       user.value = {}

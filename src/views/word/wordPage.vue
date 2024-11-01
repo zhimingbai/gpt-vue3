@@ -33,10 +33,10 @@ const submit = () => {
           </div>
           <div class="main-bottom">
             <img
-              src="@/assets/duihuak.png"
-              width="25px"
               height="25px"
+              src="@/assets/duihuak.png"
               style="margin: 10px"
+              width="25px"
             />
             <span @click="history()">2024-01-18</span>
           </div>
@@ -65,11 +65,11 @@ const submit = () => {
           >
           <div style="width: 100%">
             <input
+              id="fileInput"
+              accept="image/*"
+              class="wenj"
               name="file"
               type="file"
-              id="fileInput"
-              class="wenj"
-              accept="image/*"
             />
           </div>
           <button class="tiq" @click="submit()">提取</button>
@@ -82,6 +82,7 @@ const submit = () => {
 .word-page {
   font-size: 1.6rem;
 }
+
 .el-main {
   display: flex;
   height: 100%;
@@ -89,6 +90,7 @@ const submit = () => {
   position: relative;
   animation: fadeIn 2s forwards;
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -97,6 +99,7 @@ const submit = () => {
     opacity: 1;
   }
 }
+
 .el-r {
   width: 18%;
   height: 80vh;
@@ -110,6 +113,7 @@ const submit = () => {
   border-radius: 15px 0 0 15px;
   padding: 10px;
 }
+
 .main-top {
   width: 100%;
   height: 50px;
@@ -118,6 +122,7 @@ const submit = () => {
   line-height: 50px;
   text-align: center;
 }
+
 .main-bottom {
   width: 100%;
   height: 60px;
@@ -129,6 +134,7 @@ const submit = () => {
   justify-content: center;
   align-items: center;
 }
+
 .main-right {
   height: 80vh;
   border-radius: 0 15px 15px 0;
@@ -138,6 +144,7 @@ const submit = () => {
   background-color: white;
   overflow-y: hidden;
 }
+
 .main-mid {
   width: 47%;
   height: 80vh;
@@ -147,6 +154,7 @@ const submit = () => {
   background-color: white;
   padding: 20px 20px 0 20px;
 }
+
 .div1n {
   display: none;
   width: 75%;
@@ -160,6 +168,7 @@ const submit = () => {
   border-radius: 10px;
   overflow-y: scroll;
 }
+
 .wenj {
   width: 80%;
   padding: 0 20px;
@@ -170,6 +179,7 @@ const submit = () => {
   background: white;
   border: grey solid 1px;
 }
+
 .wenj::-webkit-file-upload-button {
   padding: 10px 15px;
   background-color: #3366cc;
@@ -189,6 +199,7 @@ const submit = () => {
   border-radius: 5px;
   cursor: pointer;
 }
+
 .tiq {
   margin-top: 20px;
   width: 100%;
@@ -197,10 +208,12 @@ const submit = () => {
   border-radius: 5px 5px 5px 5px;
   border: solid 1px;
 }
+
 .tiq:hover {
   color: white;
   background-color: #6f86d6;
 }
+
 #loading-spinner {
   border: 5px solid rgba(0, 0, 0, 0.1);
   border-top: 5px solid #3498db;
@@ -210,6 +223,7 @@ const submit = () => {
   animation: spin 1s linear infinite;
   display: none;
 }
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);

@@ -38,10 +38,10 @@ const history = () => {
           </div>
           <div class="main-bottom" @click="history()">
             <img
-              src="@/assets/duihuak.png"
-              width="25px"
               height="25px"
+              src="@/assets/duihuak.png"
               style="margin: 10px"
+              width="25px"
             />
             <span>2024-01-18</span>
           </div>
@@ -91,7 +91,6 @@ const history = () => {
               <option>Python</option>
             </select>
             <button
-              @click="askQuestion()"
               style="
                 background: #82b4ff;
                 width: 80px;
@@ -101,6 +100,7 @@ const history = () => {
                 color: #ffffff;
                 margin-left: 10px;
               "
+              @click="askQuestion()"
             >
               立即转换
             </button>
@@ -112,9 +112,9 @@ const history = () => {
           <div style="display: flex">
             <textarea
               id="questionInput"
-              placeholder="请输入"
               autocomplete="off"
               maxlength="300px"
+              placeholder="请输入"
               style="
                 width: 40%;
                 height: 60vh;
@@ -133,10 +133,10 @@ const history = () => {
             </div>
             <textarea
               id="div1"
-              readonly
               autocomplete="off"
-              maxlength="300px"
               class="div1n"
+              maxlength="300px"
+              readonly
             ></textarea>
           </div>
         </div>
@@ -148,6 +148,7 @@ const history = () => {
 .code-page {
   font-size: 1.6rem;
 }
+
 .el-main {
   display: flex;
   height: 100%;

@@ -35,23 +35,23 @@ const change = () => {
           border-radius: 20px;
         "
       >
-<!--   左侧的新对话，以后要有历史记录     -->
+        <!--   左侧的新对话，以后要有历史记录     -->
         <div class="el-r">
           <div class="main-top">
             <span style="color: #fff">+新对话</span>
           </div>
           <div class="main-bottom" @click="history()">
             <img
-              src="@/assets/duihuak.png"
-              width="25px"
               height="25px"
+              src="@/assets/duihuak.png"
               style="margin: 10px"
+              width="25px"
             />
             <span>2024-01-18</span>
           </div>
         </div>
 
-<!--    中间的生产结果    -->
+        <!--    中间的生产结果    -->
         <div class="main-mid">
           <span style="font-size: 15px; color: black"
             ><b>生产结果</b><br
@@ -71,7 +71,7 @@ const change = () => {
           </div>
         </div>
 
-<!--    右边的表单内容    -->
+        <!--    右边的表单内容    -->
         <div class="main-right">
           <div
             style="
@@ -93,9 +93,9 @@ const change = () => {
           <div>
             <textarea
               id="questionInput"
-              placeholder="填写大概有哪些课程内容"
               autocomplete="off"
               maxlength="300px"
+              placeholder="填写大概有哪些课程内容"
               style="
                 width: 100%;
                 height: 10rem;
@@ -112,13 +112,13 @@ const change = () => {
             <br />
             <select
               id="select"
+              placeholder="选择学习分析事件长度"
               style="
                 width: 100%;
                 height: 40px;
                 border-radius: 5px 5px 5px 5px;
                 box-shadow: whitesmoke 1px 1px 1px 0px;
               "
-              placeholder="选择学习分析事件长度"
             >
               <option>周</option>
               <option>月</option>
@@ -134,8 +134,6 @@ const change = () => {
             <input
               id="put1"
               name="text"
-              type="text"
-              value=""
               placeholder="提出你的具体要求"
               style="
                 width: 100%;
@@ -143,6 +141,8 @@ const change = () => {
                 border-radius: 5px 5px 5px 5px;
                 border: grey solid 1px;
               "
+              type="text"
+              value=""
             />
           </div>
           <div style="margin-top: 20px">
@@ -153,19 +153,18 @@ const change = () => {
             <input
               id="put2"
               name="text"
-              type="text"
-              value="0"
               style="
                 width: 100%;
                 height: 40px;
                 border-radius: 5px 5px 5px 5px;
                 border: grey solid 1px;
               "
+              type="text"
+              value="0"
             />
           </div>
           <button
             id="btn"
-            @click="askQuestion()"
             style="
               margin-top: 20px;
               width: 40%;
@@ -174,12 +173,12 @@ const change = () => {
               border-radius: 5px 5px 5px 5px;
               border: solid 1px;
             "
+            @click="askQuestion()"
           >
             生成分析
           </button>
           <button
             id="huan"
-            @click="change()"
             style="
               margin-left: 20px;
               margin-top: 20px;
@@ -189,6 +188,7 @@ const change = () => {
               border-radius: 5px 5px 5px 5px;
               border: solid 1px;
             "
+            @click="change()"
           >
             换一个
           </button>
@@ -201,6 +201,7 @@ const change = () => {
 .study-analysis-page {
   font-size: 1.6rem;
 }
+
 .el-main {
   display: flex;
   height: 100vh;
@@ -208,6 +209,7 @@ const change = () => {
   position: relative;
   animation: fadeIn 2s forwards;
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -216,6 +218,7 @@ const change = () => {
     opacity: 1;
   }
 }
+
 .el-r {
   width: 18%;
   height: 100%;
@@ -229,6 +232,7 @@ const change = () => {
   border-radius: 15px 0 0 15px;
   padding: 10px;
 }
+
 .main-top {
   width: 100%;
   height: 50px;
@@ -237,6 +241,7 @@ const change = () => {
   line-height: 50px;
   text-align: center;
 }
+
 .main-bottom {
   width: 100%;
   height: 60px;
@@ -248,6 +253,7 @@ const change = () => {
   justify-content: center;
   align-items: center;
 }
+
 .main-right {
   width: 33%;
   height: 100%;
@@ -258,6 +264,7 @@ const change = () => {
   background-color: white;
   overflow-y: hidden;
 }
+
 .main-mid {
   width: 47%;
   height: 100%;
@@ -267,6 +274,7 @@ const change = () => {
   background-color: white;
   padding: 20px 20px 0 20px;
 }
+
 .div1n {
   display: none;
   width: 100%;
@@ -274,6 +282,7 @@ const change = () => {
   padding: 0 0 20px 20px;
   overflow-y: scroll;
 }
+
 .char-response::after {
   content: '';
   border: 10px dashed rgba(130, 180, 255, 0.58);
@@ -284,6 +293,7 @@ const change = () => {
   top: 12px;
   right: -20px;
 }
+
 .char-response {
   color: black;
   background-color: rgba(130, 180, 255, 0.58);
@@ -297,9 +307,11 @@ const change = () => {
   clear: both; /* 清除浮动 */
   display: inline-block; /* 修改为内联块级元素 */
 }
+
 .tok {
   padding: 0;
 }
+
 #loading-spinner {
   border: 5px solid rgba(0, 0, 0, 0.1);
   border-top: 5px solid #3498db;
@@ -309,6 +321,7 @@ const change = () => {
   animation: spin 1s linear infinite;
   display: none;
 }
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);

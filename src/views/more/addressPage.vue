@@ -31,10 +31,10 @@ const askQuestion = () => {
           </div>
           <div class="main-bottom" @click="history()">
             <img
-              src="@/assets/duihuak.png"
-              width="25px"
               height="25px"
+              src="@/assets/duihuak.png"
               style="margin: 10px"
+              width="25px"
             />
             <span>2024-01-18</span>
           </div>
@@ -70,9 +70,9 @@ const askQuestion = () => {
             >
             <div>
               <textarea
-                placeholder="请输入内容"
                 autocomplete="off"
                 maxlength="300px"
+                placeholder="请输入内容"
                 style="
                   width: 100%;
                   height: 62vh;
@@ -83,7 +83,6 @@ const askQuestion = () => {
               ></textarea>
             </div>
             <button
-              @click="askQuestion()"
               style="
                 margin-top: 20px;
                 width: 100%;
@@ -92,6 +91,7 @@ const askQuestion = () => {
                 border-radius: 5px 5px 5px 5px;
                 border: solid 1px;
               "
+              @click="askQuestion()"
             >
               结果优化
             </button>
@@ -105,6 +105,7 @@ const askQuestion = () => {
 .address-page {
   font-size: 1.6rem;
 }
+
 .el-main {
   display: flex;
   height: 100vh;
@@ -112,6 +113,7 @@ const askQuestion = () => {
   position: relative;
   animation: fadeIn 2s forwards;
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -120,6 +122,7 @@ const askQuestion = () => {
     opacity: 1;
   }
 }
+
 .el-r {
   width: 18%;
   height: 100%;
@@ -133,6 +136,7 @@ const askQuestion = () => {
   border-radius: 15px 0 0 15px;
   padding: 10px;
 }
+
 .main-top {
   width: 100%;
   height: 50px;
@@ -141,6 +145,7 @@ const askQuestion = () => {
   line-height: 50px;
   text-align: center;
 }
+
 .main-bottom {
   width: 100%;
   height: 60px;
@@ -152,6 +157,7 @@ const askQuestion = () => {
   justify-content: center;
   align-items: center;
 }
+
 .main-right {
   width: 35%;
   height: 100%;
@@ -162,6 +168,7 @@ const askQuestion = () => {
   background-color: white;
   overflow-y: hidden;
 }
+
 .main-mid {
   width: 47%;
   height: 100%;
@@ -171,6 +178,7 @@ const askQuestion = () => {
   background-color: white;
   padding: 20px 20px 0 20px;
 }
+
 .div1n {
   display: none;
   width: 100%;
@@ -178,6 +186,7 @@ const askQuestion = () => {
   padding: 0 0 20px 20px;
   overflow-y: scroll;
 }
+
 .char-response::after {
   content: '';
   border: 10px dashed rgba(130, 180, 255, 0.58);
@@ -188,6 +197,7 @@ const askQuestion = () => {
   top: 12px;
   right: -20px;
 }
+
 .char-response {
   color: black;
   background-color: rgba(130, 180, 255, 0.58);

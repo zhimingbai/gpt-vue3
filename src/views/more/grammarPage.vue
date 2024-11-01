@@ -21,10 +21,10 @@ import navSection from '@/components/navSection.vue'
           </div>
           <div class="main-bottom">
             <img
-              src="@/assets/duihuak.png"
-              width="25px"
               height="25px"
+              src="@/assets/duihuak.png"
               style="margin: 10px"
+              width="25px"
             />
             <span>2024-01-18</span>
           </div>
@@ -86,9 +86,9 @@ import navSection from '@/components/navSection.vue'
             <div style="display: flex">
               <textarea
                 id="questionInput"
-                placeholder="请输入"
                 autocomplete="off"
                 maxlength="300px"
+                placeholder="请输入"
                 style="
                   width: 40%;
                   height: 60vh;
@@ -106,9 +106,9 @@ import navSection from '@/components/navSection.vue'
               </div>
               <textarea
                 id="div1"
-                readonly
                 autocomplete="off"
                 maxlength="300px"
+                readonly
                 style="
                   width: 40%;
                   height: 60vh;
@@ -144,6 +144,7 @@ import navSection from '@/components/navSection.vue'
   position: relative;
   animation: fadeIn 2s forwards;
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -152,6 +153,7 @@ import navSection from '@/components/navSection.vue'
     opacity: 1;
   }
 }
+
 .el-r {
   width: 18%;
   height: 100%;
@@ -165,6 +167,7 @@ import navSection from '@/components/navSection.vue'
   border-radius: 15px 0 0 15px;
   padding: 10px;
 }
+
 .main-top {
   width: 100%;
   height: 50px;
@@ -173,6 +176,7 @@ import navSection from '@/components/navSection.vue'
   line-height: 50px;
   text-align: center;
 }
+
 .main-bottom {
   width: 100%;
   height: 60px;
@@ -184,6 +188,7 @@ import navSection from '@/components/navSection.vue'
   justify-content: center;
   align-items: center;
 }
+
 .main-right {
   width: 100%;
   height: 100%;
@@ -193,6 +198,7 @@ import navSection from '@/components/navSection.vue'
   padding: 20px 20px 0 20px;
   background-color: white;
 }
+
 .char-response::after {
   content: '';
   border: 10px dashed rgba(130, 180, 255, 0.58);
@@ -203,6 +209,7 @@ import navSection from '@/components/navSection.vue'
   top: 12px;
   right: -20px;
 }
+
 .char-response {
   color: black;
   background-color: rgba(130, 180, 255, 0.58);

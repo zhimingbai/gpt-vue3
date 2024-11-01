@@ -22,10 +22,10 @@ import navSection from '@/components/navSection.vue'
           </div>
           <div class="main-bottom">
             <img
-              src="@/assets/duihuak.png"
-              width="25px"
               height="25px"
+              src="@/assets/duihuak.png"
               style="margin: 10px"
+              width="25px"
             />
             <span>2024-01-18</span>
           </div>
@@ -69,9 +69,9 @@ import navSection from '@/components/navSection.vue'
           <div>
             <textarea
               id="biao"
-              placeholder="请输入表结构相关信息"
               autocomplete="off"
               maxlength="300px"
+              placeholder="请输入表结构相关信息"
               style="
                 width: 100%;
                 height: 30vh;
@@ -88,9 +88,9 @@ import navSection from '@/components/navSection.vue'
           <div>
             <textarea
               id="chanr"
-              placeholder="请输入想要查询的内容"
               autocomplete="off"
               maxlength="300px"
+              placeholder="请输入想要查询的内容"
               style="
                 width: 100%;
                 height: 30vh;
@@ -142,6 +142,7 @@ import navSection from '@/components/navSection.vue'
   position: relative;
   animation: fadeIn 2s forwards;
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -150,6 +151,7 @@ import navSection from '@/components/navSection.vue'
     opacity: 1;
   }
 }
+
 .el-r {
   width: 18%;
   height: 80vh;
@@ -163,6 +165,7 @@ import navSection from '@/components/navSection.vue'
   border-radius: 15px 0 0 15px;
   padding: 10px;
 }
+
 .main-top {
   width: 100%;
   height: 50px;
@@ -171,6 +174,7 @@ import navSection from '@/components/navSection.vue'
   line-height: 50px;
   text-align: center;
 }
+
 .main-bottom {
   width: 100%;
   height: 60px;
@@ -182,6 +186,7 @@ import navSection from '@/components/navSection.vue'
   justify-content: center;
   align-items: center;
 }
+
 .main-right {
   width: 33%;
   height: 80vh;
@@ -192,6 +197,7 @@ import navSection from '@/components/navSection.vue'
   background-color: white;
   overflow-y: hidden;
 }
+
 .main-mid {
   width: 47%;
   height: 80vh;
@@ -201,6 +207,7 @@ import navSection from '@/components/navSection.vue'
   background-color: white;
   padding: 20px 20px 0 20px;
 }
+
 .div1n {
   display: none;
   width: 100%;
@@ -209,6 +216,7 @@ import navSection from '@/components/navSection.vue'
   overflow-y: auto;
   scrollbar-width: thin;
 }
+
 .char-response {
   color: black;
   background-color: rgba(130, 180, 255, 0.58);
@@ -222,9 +230,11 @@ import navSection from '@/components/navSection.vue'
   clear: both; /* 清除浮动 */
   display: inline-block; /* 修改为内联块级元素 */
 }
+
 .tok {
   padding: 0;
 }
+
 #loading-spinner {
   border: 5px solid rgba(0, 0, 0, 0.1);
   border-top: 5px solid #3498db;
@@ -234,6 +244,7 @@ import navSection from '@/components/navSection.vue'
   animation: spin 1s linear infinite;
   display: none;
 }
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);

@@ -1,8 +1,7 @@
 <script setup>
 import { RouterLink } from 'vue-router'
-import { ref, onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useUserStore } from '@/stores/index'
-import router from '@/router'
 
 // 判断是否登录
 const isLogin = ref(false)
@@ -19,7 +18,7 @@ onMounted(() => {
 // 退出登录
 const logout = () => {
   // 如果是首页，就直接更改首页的用户信息
-  if (location.href==='http://localhost:5173/'){
+  if (location.href === 'http://localhost:5173/') {
     userStore.removeUser()
     isLogin.value = false
   }
@@ -27,73 +26,102 @@ const logout = () => {
   // isLogin.value = false
   location.reload()
 }
-
-
 </script>
 <template>
-<!-- 这里可以复用，应为全局组件 -->
+  <!-- 这里可以复用，应为全局组件 -->
   <nav class="shnav">
-<!--  5个导航菜单  -->
+    <!--  5个导航菜单  -->
     <div class="shnav1">
-
-<!--      1、首页-->
+      <!--      1、首页-->
       <div class="navl">
-        <a href=""><router-link to="/">首页</router-link></a>
+        <a href="">
+          <router-link to="/">首页</router-link>
+        </a>
       </div>
 
-<!--      2、通用-->
+      <!--      2、通用-->
       <div class="navl">
         <a href="">通用</a>
         <ul class="subnav">
-          <li><a href=""><router-link to="/talk">对话</router-link></a></li>
-          <li><a href=""><router-link to="/image">图片</router-link></a></li>
-          <li><a href=""><router-link to="/word">提取文字</router-link></a></li>
+          <li>
+            <a href="">
+              <router-link to="/talk">对话</router-link>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <router-link to="/image">图片</router-link>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <router-link to="/word">提取文字</router-link>
+            </a>
+          </li>
         </ul>
       </div>
 
-<!--      3、助教助手-->
+      <!--      3、助教助手-->
       <div class="navl">
         <a href="">助教助手</a>
         <ul class="subnav">
-          <li><a href=""><router-link to="/studyAnalysis">学习分析</router-link></a></li>
-          <li><a href=""><a href="#">教研备课</a></a></li>
+          <li>
+            <a href="">
+              <router-link to="/studyAnalysis">学习分析</router-link>
+            </a>
+          </li>
+          <li>
+            <a href=""><a href="#">教研备课</a></a>
+          </li>
         </ul>
       </div>
 
-<!--      4、技术工具-->
+      <!--      4、技术工具-->
       <div class="navl">
         <a href="">技术工具</a>
         <ul class="subnav">
-          <li><a href=""><router-link to="/code">代码转换</router-link></a></li>
-          <li><a href=""><router-link to="/code">代码解释</router-link></a></li>
-          <li><a href=""><router-link to="/sql">SQL生成</router-link></a></li>
+          <li>
+            <a href="">
+              <router-link to="/code">代码转换</router-link>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <router-link to="/code">代码解释</router-link>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <router-link to="/sql">SQL生成</router-link>
+            </a>
+          </li>
         </ul>
       </div>
 
-<!--      5、更多-->
+      <!--      5、更多-->
       <div class="navl">
-        <a href=""><router-link to="/more">更多</router-link></a>
+        <a href="">
+          <router-link to="/more">更多</router-link>
+        </a>
       </div>
     </div>
 
-<!--  用户  -->
+    <!--  用户  -->
     <div style="margin-right: 2rem">
-
-<!--      未登录-->
-      <div class="navl" v-if="!isLogin">
+      <!--      未登录-->
+      <div v-if="!isLogin" class="navl">
         <router-link to="/login">登录</router-link>
       </div>
 
-<!--      已登录-->
-      <div class="navl" v-else>
-
+      <!--      已登录-->
+      <div v-else class="navl">
         <div style="width: 100%">
           <!-- TODO bug: 这里头像和用户名稍微有点bug，如果名字太长会导致换行，需要调整 -->
           <img
-            src="@/assets/geren.png"
-            width="25rem"
             height="25rem"
+            src="@/assets/geren.png"
             style="margin-right: 0.5rem"
+            width="25rem"
           />
           <span>{{ userStore.user.username }}</span>
         </div>
@@ -103,7 +131,6 @@ const logout = () => {
           <li id="xiugai"><a>修改密码</a></li>
           <li @click="logout()"><a href="#">退出登录</a></li>
         </ul>
-
       </div>
     </div>
     <div id="Modal1" style="display: none">
@@ -122,15 +149,15 @@ const logout = () => {
         </tr>
         <tr>
           <td align="right">姓名：</td>
-          <td align="left"><input type="text" id="name" /></td>
+          <td align="left"><input id="name" type="text" /></td>
         </tr>
         <tr>
           <td align="right">性别：</td>
-          <td align="left"><input type="text" id="sex" /></td>
+          <td align="left"><input id="sex" type="text" /></td>
         </tr>
         <tr>
           <td align="right">电话：</td>
-          <td align="left"><input type="text" id="dianhua" /></td>
+          <td align="left"><input id="dianhua" type="text" /></td>
         </tr>
         <tr>
           <td align="right">
@@ -158,28 +185,29 @@ const logout = () => {
         </tr>
         <tr>
           <td align="right">旧密码：</td>
-          <td align="left"><input type="text" id="oldpwd" /></td>
+          <td align="left"><input id="oldpwd" type="text" /></td>
         </tr>
         <tr>
           <td align="right">新密码：</td>
-          <td align="left"><input type="text" id="newpwd" /></td>
+          <td align="left"><input id="newpwd" type="text" /></td>
         </tr>
         <tr>
           <td align="right">重复密码：</td>
-          <td align="left"><input type="text" id="againpwd" /></td>
+          <td align="left"><input id="againpwd" type="text" /></td>
         </tr>
         <tr>
           <td align="right">
             <button id="submit2" class="btn">确认</button>
           </td>
-          <td><button id="close2" class="btn">取消</button></td>
+          <td>
+            <button id="close2" class="btn">取消</button>
+          </td>
         </tr>
       </table>
     </div>
   </nav>
 </template>
 <style scoped>
-
 a:hover {
   color: #7878ef;
 }
@@ -219,7 +247,7 @@ a:hover {
   transition: all 0.4s;
 }
 
-.navl>a{
+.navl > a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -234,26 +262,26 @@ a:hover {
   width: 100%;
   overflow: hidden;
   max-height: 0;
-  transition: .5s;
+  transition: 0.5s;
   border-radius: 0 0 10px 10px;
   background-color: rgba(142, 142, 255, 0.5);
   font-size: 20px;
   color: #ffffff;
 }
 
-.navl:hover{
-  //background-color: #00ff0a;
-}
+/*.navl:hover {
+background-color: #00ff0a;
+} */
 
-.navl:hover>.subnav{
+
+.navl:hover > .subnav {
   max-height: 500px;
   transition: all 1.5s;
 }
 
-.subnav li{
+.subnav li {
   margin: 8px;
 }
-
 
 .text-slider {
   width: 30rem;
@@ -291,6 +319,7 @@ a:hover {
   line-height: 5rem;
   text-align: center;
 }
+
 .text-container {
   display: flex;
   flex-direction: row;

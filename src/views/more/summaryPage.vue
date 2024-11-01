@@ -21,10 +21,10 @@ import navSection from '@/components/navSection.vue'
           </div>
           <div class="main-bottom">
             <img
-              src="@/assets/duihuak.png"
-              width="25px"
               height="25px"
+              src="@/assets/duihuak.png"
               style="margin: 10px"
+              width="25px"
             />
             <span>2024-01-18</span>
           </div>
@@ -60,9 +60,9 @@ import navSection from '@/components/navSection.vue'
             <div>
               <textarea
                 id="questionInput"
-                placeholder="请输入内容概述”"
                 autocomplete="off"
                 maxlength="300px"
+                placeholder="请输入内容概述”"
                 style="
                   width: 100%;
                   height: 30vh;
@@ -74,8 +74,6 @@ import navSection from '@/components/navSection.vue'
             </div>
             <input
               name="button"
-              type="button"
-              value="选择文件"
               style="
                 width: 40%;
                 height: 40px;
@@ -83,6 +81,8 @@ import navSection from '@/components/navSection.vue'
                 border-radius: 5px 5px 5px 5px;
                 border: solid 1px;
               "
+              type="button"
+              value="选择文件"
             />
             <br />
             <div style="margin-top: 20px">
@@ -93,14 +93,14 @@ import navSection from '@/components/navSection.vue'
               <input
                 id="yaoqiu"
                 name="text"
-                type="text"
-                value=""
                 style="
                   width: 100%;
                   height: 40px;
                   border-radius: 5px 5px 5px 5px;
                   border: grey solid 1px;
                 "
+                type="text"
+                value=""
               />
             </div>
 
@@ -130,8 +130,6 @@ import navSection from '@/components/navSection.vue'
             <input
               id="yuqi"
               name="text"
-              type="text"
-              value=""
               placeholder="请输入语气 例如：正常、友好、严厉 等"
               style="
                 width: 100%;
@@ -139,6 +137,8 @@ import navSection from '@/components/navSection.vue'
                 border-radius: 5px 5px 5px 5px;
                 border: grey solid 1px;
               "
+              type="text"
+              value=""
             />
             <br />
             <button
@@ -184,6 +184,7 @@ import navSection from '@/components/navSection.vue'
   position: relative;
   animation: fadeIn 2s forwards;
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -192,6 +193,7 @@ import navSection from '@/components/navSection.vue'
     opacity: 1;
   }
 }
+
 .el-r {
   width: 18%;
   height: 80vh;
@@ -205,6 +207,7 @@ import navSection from '@/components/navSection.vue'
   border-radius: 15px 0 0 15px;
   padding: 10px;
 }
+
 .main-top {
   width: 100%;
   height: 50px;
@@ -213,6 +216,7 @@ import navSection from '@/components/navSection.vue'
   line-height: 50px;
   text-align: center;
 }
+
 .main-bottom {
   width: 100%;
   height: 60px;
@@ -224,6 +228,7 @@ import navSection from '@/components/navSection.vue'
   justify-content: center;
   align-items: center;
 }
+
 .main-right {
   width: 33%;
   height: 80vh;
@@ -234,6 +239,7 @@ import navSection from '@/components/navSection.vue'
   background-color: white;
   overflow-y: hidden;
 }
+
 .main-mid {
   width: 47%;
   height: 80vh;
@@ -243,6 +249,7 @@ import navSection from '@/components/navSection.vue'
   background-color: white;
   padding: 20px 20px 0 20px;
 }
+
 .div1n {
   display: none;
   width: 100%;
@@ -250,6 +257,7 @@ import navSection from '@/components/navSection.vue'
   padding: 0 0 20px 20px;
   overflow-y: scroll;
 }
+
 .char-response::after {
   content: '';
   border: 10px dashed rgba(130, 180, 255, 0.58);
@@ -260,6 +268,7 @@ import navSection from '@/components/navSection.vue'
   top: 12px;
   right: -20px;
 }
+
 .char-response {
   color: black;
   background-color: rgba(130, 180, 255, 0.58);

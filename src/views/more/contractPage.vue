@@ -21,10 +21,10 @@ import navSection from '@/components/navSection.vue'
           </div>
           <div class="main-bottom">
             <img
-              src="@/assets/duihuak.png"
-              width="25px"
               height="25px"
+              src="@/assets/duihuak.png"
               style="margin: 10px"
+              width="25px"
             />
             <span>2024-01-18</span>
           </div>
@@ -62,8 +62,6 @@ import navSection from '@/components/navSection.vue'
               <input
                 id="juese"
                 name="text"
-                type="text"
-                value=""
                 placeholder="选择合同角色"
                 style="
                   width: 100%;
@@ -71,6 +69,8 @@ import navSection from '@/components/navSection.vue'
                   border-radius: 5px 5px 5px 5px;
                   border: grey solid 1px;
                 "
+                type="text"
+                value=""
               />
             </div>
             <div style="margin-top: 20px">
@@ -81,8 +81,6 @@ import navSection from '@/components/navSection.vue'
               <input
                 id="hetong"
                 name="text"
-                type="text"
-                value=""
                 placeholder="选择合同类型"
                 style="
                   width: 100%;
@@ -90,6 +88,8 @@ import navSection from '@/components/navSection.vue'
                   border-radius: 5px 5px 5px 5px;
                   border: grey solid 1px;
                 "
+                type="text"
+                value=""
               />
             </div>
             <br />
@@ -99,9 +99,9 @@ import navSection from '@/components/navSection.vue'
             <div>
               <textarea
                 id="questionInput"
-                placeholder="补充更多信息或要求”"
                 autocomplete="off"
                 maxlength="300px"
+                placeholder="补充更多信息或要求”"
                 style="
                   width: 100%;
                   height: 30vh;

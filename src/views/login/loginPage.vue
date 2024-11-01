@@ -1,6 +1,6 @@
 <script setup>
-import { ref, watch, onMounted } from 'vue'
-import { User, Lock } from '@element-plus/icons-vue'
+import { onMounted, ref, watch } from 'vue'
+import { Lock, User } from '@element-plus/icons-vue'
 import router from '@/router/index.js'
 import { useUserStore } from '@/stores/index'
 
@@ -96,11 +96,11 @@ onMounted(async () => {
 // }, 0)
 </script>
 <template>
-  <el-row style="width: 100%;">
-    <el-col class="login-page" :span="12">
-      <el-col :span="8" :offset="12" class="left">
+  <el-row style="width: 100%">
+    <el-col :span="12" class="login-page">
+      <el-col :offset="12" :span="8" class="left">
         <section class="image">
-          <img src="@/assets/zqzxlogo.png" alt="" />
+          <img alt="" src="@/assets/zqzxlogo.png" />
         </section>
         <!--        文字部分-->
         <section>
@@ -115,16 +115,16 @@ onMounted(async () => {
         </section>
       </el-col>
     </el-col>
-    <el-col :span="6" :offset="3">
+    <el-col :offset="3" :span="6">
       <!--      注册-->
       <el-form
+        v-if="isRegister"
+        ref="from"
         :model="fromData"
         :rules="rules"
-        ref="from"
-        size="large"
         autocomplete="off"
-        v-if="isRegister"
         class="form"
+        size="large"
       >
         <el-form-item>
           <h1>注册</h1>
@@ -152,28 +152,28 @@ onMounted(async () => {
         </el-form-item>
         <el-form-item>
           <el-button
-            type="primary"
             auto-insert-space
             class="large1"
+            type="primary"
             @click="register"
             >注册
           </el-button>
         </el-form-item>
         <el-form-item>
-          <el-link type="info" :underline="false" @click="isRegister = false"
+          <el-link :underline="false" type="info" @click="isRegister = false"
             ><span class="textBlack">← 返回</span>
           </el-link>
         </el-form-item>
       </el-form>
       <!--      登录-->
       <el-form
+        v-else
+        ref="from"
         :model="fromData"
         :rules="rules"
-        ref="from"
-        size="large"
         autocomplete="off"
-        v-else
         class="form"
+        size="large"
       >
         <el-form-item>
           <h1>登录</h1>
@@ -196,23 +196,23 @@ onMounted(async () => {
           <section class="flex">
             <el-input
               v-model="fromData.code"
-              type="text"
               placeholder="验证码"
+              type="text"
             ></el-input>
-            <img src="@/assets/code.png" alt="" />
+            <img alt="" src="@/assets/code.png" />
           </section>
         </el-form-item>
         <el-form-item>
           <el-button
-            type="primary"
             auto-insert-space
             class="large1"
+            type="primary"
             @click="login"
             >登录
           </el-button>
         </el-form-item>
         <el-form-item>
-          <el-link type="info" :underline="false" @click="isRegister = true">
+          <el-link :underline="false" type="info" @click="isRegister = true">
             <span class="textBlack">注册 →</span>
           </el-link>
         </el-form-item>
@@ -225,6 +225,7 @@ onMounted(async () => {
 .login-page {
   height: 100vh;
 }
+
 .textBlack {
   color: #333;
 }

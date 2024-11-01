@@ -11,6 +11,7 @@ import { ref } from 'vue'
 
 //  用来判断当前显示哪个内容
 const currentId = ref(1)
+
 //  更改currentId的值
 function showContent(index) {
   console.log(index)
@@ -28,10 +29,10 @@ function showContent(index) {
       >
         <div style="display: flex">
           <img
+            alt="logo"
+            height="70rem"
             src="@/assets/zqzxlogo.png"
             width="70rem"
-            height="70rem"
-            alt="logo"
           />
           <div
             style="
@@ -56,11 +57,10 @@ function showContent(index) {
         </div>
 
         <div style="display: flex; width: 100%; margin-top: 3rem">
-          <router-link to="/talk" class="annv" style="line-height: 5rem">
+          <router-link class="annv" style="line-height: 5rem" to="/talk">
             <a href="">点击体验</a>
           </router-link>
         </div>
-
       </div>
       <div class="todown">
         <div class="jiantou jfirst"></div>
@@ -107,80 +107,68 @@ function showContent(index) {
         <div style="display: flex">
           <div class="vertical-nav">
             <button
+              id="button1"
               class="nav-button"
               style="border-radius: 2rem 0 0 0"
               @click="showContent(1)"
-              id="button1"
             >
               <img
-                src="@/assets/luntan.png"
-                width="40"
-                height="40"
-                style="margin-right: 2rem"
                 alt=""
+                height="40"
+                src="@/assets/luntan.png"
+                style="margin-right: 2rem"
+                width="40"
               />
               智能对话
             </button>
-            <button
-              class="nav-button"
-              @click="showContent(2)"
-              id="button2"
-            >
+            <button id="button2" class="nav-button" @click="showContent(2)">
               <img
-                src="@/assets/tuwen.png"
-                width="45"
-                height="45"
-                style="margin-right: 2rem"
                 alt=""
+                height="45"
+                src="@/assets/tuwen.png"
+                style="margin-right: 2rem"
+                width="45"
               />
               知心图文
             </button>
-            <button
-              class="nav-button"
-              @click="showContent(3)"
-              id="button3"
-            >
+            <button id="button3" class="nav-button" @click="showContent(3)">
               <img
-                src="@/assets/tiqu.png"
-                width="40"
-                height="40"
-                style="margin-right: 2rem"
                 alt=""
+                height="40"
+                src="@/assets/tiqu.png"
+                style="margin-right: 2rem"
+                width="40"
               />
               提取文字
             </button>
-            <button
-              class="nav-button"
-              @click="showContent(4)"
-              id="button4"
-            >
+            <button id="button4" class="nav-button" @click="showContent(4)">
               <img
-                src="@/assets/gongzuo.png"
-                width="40"
-                height="40"
-                style="margin-right: 2rem"
                 alt=""
+                height="40"
+                src="@/assets/gongzuo.png"
+                style="margin-right: 2rem"
+                width="40"
               />
               学习分析
             </button>
             <button
+              id="button5"
               class="nav-button"
               style="border-radius: 0 0 0 2rem"
               @click="showContent(5)"
-              id="button5"
             >
               <img
-                src="@/assets/tese.png"
-                width="40"
-                height="40"
-                style="margin-right: 2rem"
                 alt=""
+                height="40"
+                src="@/assets/tese.png"
+                style="margin-right: 2rem"
+                width="40"
               />
               特色模型
             </button>
           </div>
           <div class="gnnr">
-            <div class="content" v-if="currentId == 1">
+            <div v-if="currentId == 1" class="content">
               <div id="text1">
                 <h1>智能对话</h1>
                 <p>
@@ -188,16 +176,16 @@ function showContent(index) {
                 </p>
               </div>
               <video
-                width="80%"
+                autoplay
                 height="60%"
                 loop="loop"
                 muted="muted"
-                autoplay
+                width="80%"
               >
                 <source src="@/assets/对话.mp4" type="video/mp4" />
               </video>
             </div>
-            <div class="content" v-if="currentId == 2">
+            <div v-if="currentId == 2" class="content">
               <div id="text2">
                 <h1>知心文生图</h1>
                 <p>
@@ -205,16 +193,16 @@ function showContent(index) {
                 </p>
               </div>
               <video
-                width="80%"
+                autoplay
                 height="60%"
                 loop="loop"
                 muted="muted"
-                autoplay
+                width="80%"
               >
                 <source src="@/assets/图片.mp4" type="video/mp4" />
               </video>
             </div>
-            <div class="content" v-if="currentId == 3">
+            <div v-if="currentId == 3" class="content">
               <div id="text3">
                 <h1>提取文字</h1>
                 <p>
@@ -222,16 +210,16 @@ function showContent(index) {
                 </p>
               </div>
               <video
-                width="80%"
+                autoplay
                 height="60%"
                 loop="loop"
                 muted="muted"
-                autoplay
+                width="80%"
               >
                 <source src="@/assets/tiqu文字.mp4" type="video/mp4" />
               </video>
             </div>
-            <div class="content" v-if="currentId == 4">
+            <div v-if="currentId == 4" class="content">
               <div id="text4">
                 <h1>学习分析</h1>
                 <p>
@@ -239,16 +227,16 @@ function showContent(index) {
                 </p>
               </div>
               <video
-                width="80%"
+                autoplay
                 height="60%"
                 loop="loop"
                 muted="muted"
-                autoplay
+                width="80%"
               >
                 <source src="@/assets/学习分析.mp4" type="video/mp4" />
               </video>
             </div>
-            <div class="content" v-if="currentId == 5">
+            <div v-if="currentId == 5" class="content">
               <div id="text5">
                 <h1>特色模型</h1>
                 <p>
@@ -257,16 +245,16 @@ function showContent(index) {
               </div>
               <div style="display: flex; width: 100%; height: 100%">
                 <img
-                  src="@/assets/ts1.png"
-                  width="50%"
                   height="120%"
+                  src="@/assets/ts1.png"
                   style="padding: 0.5rem"
+                  width="50%"
                 />
                 <img
-                  src="@/assets/ts2.png"
-                  width="50%"
                   height="100%"
+                  src="@/assets/ts2.png"
                   style="padding: 0.5rem"
+                  width="50%"
                 />
               </div>
             </div>
@@ -278,17 +266,19 @@ function showContent(index) {
       <div class="tp3">
         <div class="biaot">知心文生图</div>
         <div class="gallery">
-          <img class="photo" src="@/assets/tu1.png" alt="1" />
-          <img class="photo" src="@/assets/tu2.png" alt="2" />
-          <img class="photo" src="@/assets/tu3.png" alt="3" />
-          <img class="photo" src="@/assets/tu4.png" alt="4" />
-          <img class="photo" src="@/assets/tu5.png" alt="5" />
+          <img alt="1" class="photo" src="@/assets/tu1.png" />
+          <img alt="2" class="photo" src="@/assets/tu2.png" />
+          <img alt="3" class="photo" src="@/assets/tu3.png" />
+          <img alt="4" class="photo" src="@/assets/tu4.png" />
+          <img alt="5" class="photo" src="@/assets/tu5.png" />
         </div>
         <div class="caption">
           一款强大的人工智能绘画工具，为用户提供了各种创意的绘图功能。
         </div>
         <div class="an-tu">
-          <router-link to="/talk" class="tpt">前去体验<span class="arrow"></span></router-link>
+          <router-link class="tpt" to="/talk"
+            >前去体验<span class="arrow"></span
+          ></router-link>
         </div>
       </div>
     </div>
@@ -314,11 +304,11 @@ function showContent(index) {
   overflow: hidden;
   border-radius: 2rem;
 
-  display:inline-block;
+  display: inline-block;
   color: #fff;
   line-height: 60px;
-  text-decoration:none;
-  background: linear-gradient(90deg, #03a9f4,#f441a5,#7878ef,#03a9f4);
+  text-decoration: none;
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #7878ef, #03a9f4);
   background-size: 400%;
   animation: animate 8s linear infinite;
 }
@@ -329,15 +319,10 @@ function showContent(index) {
 
   left: -5px;
   top: -5px;
-  right:-5px;
-  bottom:-5px;
-  z-index:-1;
-  background:linear-gradient(90deg,
-  #03a9f4,
-  #f441a5,
-  #ffeb3b,
-  #03a9f4
-  );
+  right: -5px;
+  bottom: -5px;
+  z-index: -1;
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
 
   background-size: 400%;
   opacity: 0;
@@ -416,10 +401,10 @@ function showContent(index) {
 }
 
 @keyframes animate {
-  0%{
+  0% {
     background-position: 0 0;
   }
-  100%{
+  100% {
     background-position: 400% 0;
   }
 }

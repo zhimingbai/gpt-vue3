@@ -7,7 +7,7 @@ export const useTokenStore = defineStore(
     // token数量
     const token = ref(100)
     // 设置token数量
-    const setToken = (value) => {
+    const setToken = value => {
       token.value = value
     }
     // 删除token

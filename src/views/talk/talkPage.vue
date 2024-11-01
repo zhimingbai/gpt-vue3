@@ -10,6 +10,7 @@ const tokenCount = ref(tokenStore.token)
 
 // 对话框内容
 const questionInput = ref('')
+
 async function sendQuestion() {
   if (questionInput.value.trim() === '') {
     return ElMessage.error('请输入内容')
@@ -48,16 +49,16 @@ const btnHistory = () => {
       >
         <div class="el-r">
           <div>
-            <button class="main-top" style="color: #fff" onclick="xinduihua()">
+            <button class="main-top" onclick="xinduihua()" style="color: #fff">
               +新对话
             </button>
           </div>
           <button class="main-bottom" @click="btnHistory()">
             <img
-              src="@/assets/duihuak.png"
-              width="25px"
               height="25px"
+              src="@/assets/duihuak.png"
               style="margin: 10px"
+              width="25px"
             />
             <span>历史记录</span>
           </button>
@@ -131,12 +132,12 @@ const btnHistory = () => {
               <div id="container">
                 <textarea
                   id="questionInput"
-                  placeholder="说点什么吧"
                   v-model="questionInput"
+                  placeholder="说点什么吧"
                   @keyup.enter="sendQuestion()"
                 ></textarea>
                 <div id="submit-icon" @click="sendQuestion()">
-                  <img src="@/assets/fasong.png" width="30px" height="30px" />️
+                  <img height="30px" src="@/assets/fasong.png" width="30px" />️
                 </div>
                 <div id="loading-spinner"></div>
               </div>
@@ -156,6 +157,7 @@ const btnHistory = () => {
   position: relative;
   animation: fadeIn 2s forwards;
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -164,6 +166,7 @@ const btnHistory = () => {
     opacity: 1;
   }
 }
+
 .el-r {
   width: 18%;
   height: 100%;
@@ -177,6 +180,7 @@ const btnHistory = () => {
   border-radius: 15px 0 0 15px;
   padding: 10px;
 }
+
 .main-top {
   width: 100%;
   height: 50px;
@@ -186,6 +190,7 @@ const btnHistory = () => {
   line-height: 50px;
   text-align: center;
 }
+
 .main-bottom {
   width: 100%;
   height: 60px;
@@ -197,6 +202,7 @@ const btnHistory = () => {
   margin-top: 10px;
   border: #82b4ff solid 2px;
 }
+
 .box-right {
   width: 100%;
   height: 100%;
@@ -207,6 +213,7 @@ const btnHistory = () => {
   border-top: 3px solid #00bfff;
   border-bottom: 3px solid #00bfff;
 }
+
 .bottom-box {
   width: 70%;
   height: 25vh;
@@ -217,6 +224,7 @@ const btnHistory = () => {
   text-align: center;
   margin: 20px 10%;
 }
+
 .bottom-box-an {
   width: 90%;
   display: flex;
@@ -224,11 +232,13 @@ const btnHistory = () => {
   justify-content: space-between;
   min-width: 300px;
 }
+
 .an {
   display: flex;
   align-items: center;
   position: relative;
 }
+
 .an-button {
   display: flex;
   align-items: center;
@@ -240,21 +250,25 @@ const btnHistory = () => {
   margin-right: 5px;
   cursor: pointer;
 }
+
 .input-box {
   width: 100%;
   margin: 0;
   padding-left: 20px;
 }
+
 .box-title {
   font-size: 24px;
   font-weight: 500;
   color: #3f7edd;
 }
+
 .box-content {
   font-size: 18px;
   font-weight: 500;
   color: #414141;
 }
+
 .char-response::after {
   content: '';
   border: 10px dashed rgba(130, 180, 255, 0.58);
@@ -265,6 +279,7 @@ const btnHistory = () => {
   top: 12px;
   right: -20px;
 }
+
 .char-response {
   color: black;
   background-color: whitesmoke;
@@ -294,6 +309,7 @@ const btnHistory = () => {
   clear: both; /* 清除浮动 */
   display: inline-block; /* 修改为内联块级元素 */
 }
+
 .char-question::after {
   content: '';
   border: 10px dashed rgba(130, 180, 255, 0.58);
@@ -304,6 +320,7 @@ const btnHistory = () => {
   top: 12px;
   left: -20px;
 }
+
 #container {
   width: 90%;
   margin: 20px 0;
@@ -313,6 +330,7 @@ const btnHistory = () => {
   border: 2px solid #00bfff;
   border-radius: 15px;
 }
+
 #questionInput {
   width: 85%;
   height: 24%;
@@ -322,6 +340,7 @@ const btnHistory = () => {
   outline: none;
   resize: none;
 }
+
 #loading-spinner {
   border: 5px solid rgba(0, 0, 0, 0.1);
   border-top: 5px solid #3498db;
@@ -331,12 +350,14 @@ const btnHistory = () => {
   animation: spin 1s linear infinite;
   display: none;
 }
+
 #submit-icon {
   cursor: pointer;
   display: inline-block;
   width: 15%;
   height: 30px;
 }
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -345,6 +366,7 @@ const btnHistory = () => {
     transform: rotate(360deg);
   }
 }
+
 .tok {
   padding: 0;
 }

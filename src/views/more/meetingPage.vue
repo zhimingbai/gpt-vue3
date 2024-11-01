@@ -21,10 +21,10 @@ import navSection from '@/components/navSection.vue'
           </div>
           <div class="main-bottom">
             <img
-              src="@/assets/duihuak.png"
-              width="25px"
               height="25px"
+              src="@/assets/duihuak.png"
               style="margin: 10px"
+              width="25px"
             />
             <span>2024-01-18</span>
           </div>
@@ -56,14 +56,14 @@ import navSection from '@/components/navSection.vue'
               <input
                 id="zhuti"
                 name="text"
-                type="text"
-                value=""
                 style="
                   width: 100%;
                   height: 40px;
                   border-radius: 5px 5px 5px 5px;
                   border: grey solid 1px;
                 "
+                type="text"
+                value=""
               />
             </div>
             <br />
@@ -73,9 +73,9 @@ import navSection from '@/components/navSection.vue'
             <div>
               <textarea
                 id="questionInput"
-                placeholder="请输入会议内容”"
                 autocomplete="off"
                 maxlength="300px"
+                placeholder="请输入会议内容”"
                 style="
                   width: 100%;
                   height: 15vh;
@@ -88,8 +88,6 @@ import navSection from '@/components/navSection.vue'
             <input
               id="wenjian"
               name="button"
-              type="button"
-              value="选择文件"
               style="
                 width: 40%;
                 height: 40px;
@@ -97,6 +95,8 @@ import navSection from '@/components/navSection.vue'
                 border-radius: 5px 5px 5px 5px;
                 border: solid 1px;
               "
+              type="button"
+              value="选择文件"
             />
             <br />
             <br />
@@ -134,9 +134,9 @@ import navSection from '@/components/navSection.vue'
             <div>
               <textarea
                 id="zhiling"
-                placeholder="请输入清晰明确的指令，说明你想要什么样的”"
                 autocomplete="off"
                 maxlength="300px"
+                placeholder="请输入清晰明确的指令，说明你想要什么样的”"
                 style="
                   width: 100%;
                   height: 20vh;
